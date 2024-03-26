@@ -1,5 +1,12 @@
 {
   "name": "officesync-ui",
+  "author": "Arjun Ghimire <developerarjun1@gmail.com>",
+  "description": "Vite + react project, OfficeSync project that help organization to manage all the operation of the company",
+  "repository": {
+		"type": "git",
+		"url": "https://github.com/developerarjun/officesync-ui"
+	},
+  "license": "UNLICENSED",
   "private": true,
   "version": "0.0.0",
   "type": "module",
