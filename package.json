@@ -3,9 +3,9 @@
   "author": "Arjun Ghimire <developerarjun1@gmail.com>",
   "description": "Vite + react project, OfficeSync project that help organization to manage all the operation of the company",
   "repository": {
-		"type": "git",
-		"url": "https://github.com/developerarjun/officesync-ui"
-	},
+    "type": "git",
+    "url": "https://github.com/developerarjun/officesync-ui"
+  },
   "license": "UNLICENSED",
   "private": true,
   "version": "0.0.0",
@@ -17,6 +17,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/lodash": "^4.17.0",
+    "@types/react-router-dom": "^5.3.3",
+    "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
