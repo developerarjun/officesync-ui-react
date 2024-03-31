@@ -2,9 +2,7 @@ import flattenDeep from 'lodash/flattenDeep';
 import { Route, Routes as ReactRoutes } from 'react-router-dom';
 import ProtectedRoute from './ProtectedRoute';
 const generateFlattenRoutes = (routes: any) => {
-  debugger
     if (!routes) return [];
-    console.log(flattenDeep(routes.map(({ routes: subRoutes, ...rest } : any) => [rest, generateFlattenRoutes(subRoutes)])))
     return flattenDeep(routes.map(({ routes: subRoutes, ...rest } : any) => [rest, generateFlattenRoutes(subRoutes)]));
   }
   
