@@ -4,59 +4,164 @@
   display: flex;
   flex-direction: row;
   width: 100%;
-}
 
-.loginleftSideContainer {
-  background-image: url("/src/assets/login.png");
-  height: 100vh;
-  display: flex;
-  flex-direction: row;
-  width: 60%;
-  overflow-y: hidden;
-  background-size: cover;
-  background-position: 50% 50%;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  padding-left: 70px;
-  position: relative;
-  z-index: 1;
-
-  .loginLeftSideContainerOverlay {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-    opacity: 0.4;
-    background-color: #000;
-  }
-
-  .bgText {
+  .loginleftSideContainer {
+    background-image: url("/src/assets/login.png");
+    height: 100vh;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-end;
-    margin-bottom: 10rem;
-    .welcomeText {
-      font-family: "Rubik";
-      font-size: 36.62px;
-      line-height: 43.94px;
-      font-weight: 500;
-      color: $white;
+    flex-direction: row;
+    width: 55%;
+    overflow-y: hidden;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    padding-left: 70px;
+    position: relative;
+    z-index: 1;
+
+    .loginLeftSideContainerOverlay {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      opacity: 0.4;
+      background-color: #000;
     }
-    .startText {
-      font-size: 45.78px;
-      font-family: "Rubik";
-      line-height: 54.94px;
-      color: $white;
-      font-weight: 500;
+
+    .bgText {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-end;
+      margin-bottom: 10rem;
+      .welcomeText {
+        font-family: "Rubik";
+        font-size: 36.62px;
+        line-height: 43.94px;
+        font-weight: 500;
+        color: $white;
+      }
+      .startText {
+        font-size: 45.78px;
+        font-family: "Rubik";
+        line-height: 54.94px;
+        color: $white;
+        font-weight: 500;
+      }
     }
   }
   .loginForm {
     display: flex;
-    width: 40%;
+    flex-direction: column;
     height: 100%;
+    width: 45%;
     background-color: $white;
+    padding: 18px;
+    .imageWrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .appLogo {
+        height: 22px;
+        padding: 50px;
+      }
+    }
+    .titleText {
+      font-family: "Rubik";
+      font-size: 34px;
+      line-height: 43.94px;
+      font-weight: 500;
+      color: $neutral;
+      padding-top: 40px;
+    }
+    .credText {
+      font-family: "Rubik";
+      font-size: 13px;
+      line-height: 14.4px;
+      color: $neutral;
+    }
+    .email {
+      color: $neutral;
+      font-size: 15px;
+      font-family: "Rubik";
+      line-height: 24px;
+      padding-top: 4px;
+      margin-top: 10px;
+    }
+    .emailInput {
+      background-color: $tertiary;
+      height: 36px;
+      color: $secondary;
+      border: 1px solid #e1e1e1;
+      padding-left: 10px;
+      border-radius: 5px;
+    }
+    // .emailInputContainer {
+    //   position: relative;
+    //   width: 100%;
+    // }
+    // .eye-icon {
+    //   position: absolute;
+    //   top: 50%;
+    //   right: 5px;
+    //   transform: translateY(-50%);
+    //   width: 15px;
+    //   height: 15px;
+    //   background-image: url("/src/icons/eye-icon.png");
+    //   background-size: cover;
+    //   cursor: pointer;
+    // }
+    .passwordInput {
+      background-color: $tertiary;
+      height: 36px;
+      color: $secondary;
+      border: 1px solid #e1e1e1;
+      padding-left: 10px;
+      border-radius: 5px;
+    }
+    .forgotPasswordText {
+      font-family: "Roboto";
+      font-size: 12px;
+      color: $neutral;
+      text-align: end;
+      margin-top: 5px;
+      cursor: pointer;
+    }
+    .buttonWrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 35px;
+      .submitButton {
+        background-color: $primary;
+        width: 30%;
+        height: 40px;
+        border-radius: 4px;
+        color: $white;
+        font-size: 16px;
+        cursor: pointer;
+        padding: 10px 20px;
+        font-weight: 400;
+      }
+      .signUpWrapper {
+        display: flex;
+        flex-direction: row;
+        .noAccountText {
+          font-size: 12px;
+          font-family: "Rubik";
+        }
+        .signupText {
+          color: $primary;
+          font-size: 12px;
+          font-family: "Rubik";
+          padding-left: 2px;
+          cursor: pointer;
+        }
+      }
+    }
   }
 }
