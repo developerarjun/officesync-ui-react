@@ -21,7 +21,7 @@ function LoginPage() {
       <div className="loginForm">
         <div className="imageWrapper">
           <img
-            src="/src/assets/office-logo.png"
+            src="/images/office-logo.png"
             alt="app logo"
             className="appLogo"
           ></img>
@@ -41,16 +41,6 @@ function LoginPage() {
           placeholder={"Enter your password"}
           className="passwordInput"
         />
-
-        {/* <span className="emailInputContainer">
-          <span className="eye-icon"></span>
-          <input
-            type="text"
-            value={"Enter your password"}
-            className="passwordInput"
-          />
-        </span> */}
-
         <label
           className="forgotPasswordText"
           onClick={() => navigate("/forgot-password")}
