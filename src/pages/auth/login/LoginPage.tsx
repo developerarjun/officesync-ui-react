@@ -6,55 +6,70 @@ function LoginPage() {
   useEffect(() => {}, []);
   const navigate = useNavigate();
   return (
-    <div className="loginContainer">
-      <div className="loginleftSideContainer">
-        <div className="loginLeftSideContainerOverlay" />
-        <div className="bgText">
-          <label className="welcomeText">Welcome Back!</label>
-          <label className="startText">
+    <div className="loginContainer flex flex-row">
+      <div className="loginleftSideContainer flex flex-row">
+        <div className="loginLeftSideContainerOverlay bg-black" />
+        <div className="bgText flex flex-column items-start justify-end">
+          <label className=" primary-font text-white heading-one">
+            Welcome Back!
+          </label>
+          <label className=" primary-font text-white heading-two">
             Ready to
             <br />
             get Started
           </label>
         </div>
       </div>
-      <div className="loginForm">
-        <div className="imageWrapper">
+      <div className="loginForm flex flex-column">
+        <div className="flex content-center">
           <img
             src="/images/office-logo.png"
             alt="app logo"
             className="appLogo"
           ></img>
         </div>
-        <label className="titleText">Sign in</label>
-        <label className="credText">Please enter your email and password</label>
-        <label className="email">Email</label>
+        <label className="titleText primary-font text-neutral heading-three">
+          Sign in
+        </label>
+        <label className=" regular-font text-neutral body-one">
+          Please enter your email and password
+        </label>
+        <label className="email regular-font text-neutral body-two">
+          Email
+        </label>
         <input
           type="text"
           placeholder={"Enter your email"}
-          className="emailInput"
+          className="emailInput text-secondary bg-tertiary"
         />
         <label className="email">Password</label>
 
         <input
           type="password"
           placeholder={"Enter your password"}
-          className="passwordInput"
+          className="passwordInput text-secondary bg-tertiary"
         />
         <label
-          className="forgotPasswordText"
+          className="forgotPasswordText secondary-font text-neutral display-one"
           onClick={() => navigate("/forgot-password")}
         >
           Forgot Password?
         </label>
 
-        <div className="buttonWrapper">
-          <button type="submit" className="submitButton">
+        <div className="buttonWrapper flex flex-column content-center">
+          <button
+            type="submit"
+            className="submitButton text-white regular-font bg-primary display-two"
+          >
             Sign in
           </button>
-          <div className="signUpWrapper">
-            <label className="noAccountText">Don’t have an account yet?</label>
-            <label className="signupText">Sign up</label>
+          <div className="signUpWrapper flex flex-row">
+            <label className=" regular-font display-one">
+              Don’t have an account yet?
+            </label>
+            <label className="signupText text-primary regular-font display-one">
+              Sign up
+            </label>
           </div>
         </div>
       </div>

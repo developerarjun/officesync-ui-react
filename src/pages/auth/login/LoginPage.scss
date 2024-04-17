@@ -1,8 +1,6 @@
 @import "./../../../scss/style.scss";
 
 .loginContainer {
-  display: flex;
-  flex-direction: row;
   width: 100%;
   @media (max-width: 768px) {
     flex-direction: column;
@@ -11,8 +9,6 @@
   .loginleftSideContainer {
     background-image: url("/public/images/login.png");
     height: 100vh;
-    display: flex;
-    flex-direction: row;
     width: 55%;
     overflow-y: hidden;
     background-size: cover;
@@ -34,30 +30,13 @@
       left: 0;
       z-index: -1;
       opacity: 0.4;
-      background-color: $black;
     }
 
     .bgText {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: flex-end;
       margin-bottom: 10rem;
-      .welcomeText {
-        font-size: 2.289rem;
-        line-height: 2.746rem;
-        color: $white;
-      }
-      .startText {
-        font-size: 2.861rem;
-        line-height: 3.434rem;
-        color: $white;
-      }
     }
   }
   .loginForm {
-    display: flex;
-    flex-direction: column;
     height: 100%;
     width: 45%;
     padding: 1.125rem;
@@ -65,100 +44,59 @@
       justify-content: center;
       width: 75%;
     }
-    .imageWrapper {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      .appLogo {
-        height: 1.375rem;
-        padding: 3.125rem;
-      }
+    .appLogo {
+      height: 1.375rem;
+      padding: 3.125rem;
     }
+
     .titleText {
-      font-size: 2.125rem;
       margin-top: 3rem;
-      line-height: 2.746rem;
-      color: $neutral;
       padding-top: 2.5rem;
       @media (max-width: 768px) {
         font-size: 2.03rem;
         padding-top: 1.15rem;
       }
     }
-    .credText {
-      font-size: 0.813rem;
-      font-weight: $regular;
-      line-height: 0.9rem;
-      color: $neutral;
-    }
     .email {
-      color: $neutral;
-      font-size: 0.938rem;
-      font-weight: $regular;
-      line-height: 1.5rem;
       padding-top: 0.25rem;
       margin-top: 0.625rem;
     }
     .emailInput {
-      background-color: $tertiary;
       height: 2.25rem;
-      color: $secondary;
-      border: 1px solid #e1e1e1;
+      border: 1px solid $borderneutral;
       padding-left: 0.625rem;
       border-radius: 0.313rem;
     }
 
     .passwordInput {
-      background-color: $tertiary;
       height: 2.25rem;
-      color: $secondary;
-      border: 1px solid #e1e1e1;
+      border: 1px solid $borderneutral;
       padding-left: 0.625rem;
       border-radius: 0.313rem;
     }
     .forgotPasswordText {
-      font-family: $secondaryfont;
-      font-weight: $regular;
-      font-size: 0.75rem;
-      color: $neutral;
       text-align: end;
       margin-top: 0.313rem;
       cursor: pointer;
     }
     .buttonWrapper {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
       margin-top: 2.188rem;
       .submitButton {
-        background-color: $primary;
         width: 30%;
         height: 2.5rem;
         border-radius: 0.25rem;
-        color: $white;
-        font-size: 1rem;
+        border: 1px solid $primary;
         padding: 0.625rem;
         cursor: pointer;
-        font-weight: $regular;
         @media (max-width: 768px) {
           width: 50%;
         }
       }
       .signUpWrapper {
-        display: flex;
-        flex-direction: row;
         @media (max-width: 768px) {
           padding-bottom: 0.2rem;
         }
-        .noAccountText {
-          font-size: 12px;
-          font-weight: $regular;
-        }
         .signupText {
-          color: $primary;
-          font-size: 0.75rem;
-          font-weight: $regular;
           padding-left: 0.125rem;
           cursor: pointer;
         }

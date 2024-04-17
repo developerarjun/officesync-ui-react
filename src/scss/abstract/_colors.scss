@@ -5,3 +5,34 @@ $primary: #0672cb;
 $secondary: #636363;
 $tertiary: #f5f6f7;
 $borderneutral: #e1e1e1;
+
+.text-white {
+  color: $white;
+}
+.text-black {
+  color: $black;
+}
+.text-neutral {
+  color: $neutral;
+}
+.text-primary {
+  color: $primary;
+}
+.text-secondary {
+  color: $secondary;
+}
+.text-tertiary {
+  color: $tertiary;
+}
+.text-borderneutral {
+  color: $borderneutral;
+}
+.bg-primary {
+  background-color: $primary;
+}
+.bg-black {
+  background-color: $black;
+}
+.bg-tertiary {
+  background-color: $tertiary;
+}
