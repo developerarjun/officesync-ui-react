@@ -1,5 +1,12 @@
 @use 'sass:math' as math;
-
+$breakpoints: (
+  "xs": 0,
+  "sm": 576px,
+  "md": 768px,
+  "lg": 992px,
+  "xl": 1200px,
+  "xxl": 1600px,
+);
 // Down Screen ( max-width )
 @mixin breakpoint-down($screen) {
 	max-width: calc($screen - 0.2);

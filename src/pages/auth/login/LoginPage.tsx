@@ -6,7 +6,7 @@ function LoginPage() {
   useEffect(() => {}, []);
   const navigate = useNavigate();
   return (
-    <div className="loginContainer flex flex-row">
+    <div className="loginContainer">
       <div className="loginleftSideContainer flex flex-row">
         <div className="loginLeftSideContainerOverlay bg-black" />
         <div className="bgText flex flex-column items-start justify-end">
