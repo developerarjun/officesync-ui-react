@@ -10,10 +10,10 @@ function LoginPage() {
       <div className="loginleftSideContainer flex flex-row">
         <div className="loginLeftSideContainerOverlay bg-black" />
         <div className="bgText flex flex-column items-start justify-end">
-          <label className=" primary-font text-white heading-one">
+          <label className="text-white heading-one text-shadow">
             Welcome Back!
           </label>
-          <label className=" primary-font text-white heading-two">
+          <label className="text-white heading-two text-shadow">
             Ready to
             <br />
             get Started
@@ -28,9 +28,7 @@ function LoginPage() {
             className="appLogo"
           ></img>
         </div>
-        <label className="titleText primary-font text-neutral heading-three">
-          Sign in
-        </label>
+        <label className="titleText text-neutral heading-three">Sign in</label>
         <label className=" regular-font text-neutral body-one">
           Please enter your email and password
         </label>
@@ -64,7 +62,7 @@ function LoginPage() {
             Sign in
           </button>
           <div className="signUpWrapper flex flex-row">
-            <label className=" regular-font display-one">
+            <label className=" regular-font text-neutral display-one">
               Don’t have an account yet?
             </label>
             <label className="signupText text-primary regular-font display-one">

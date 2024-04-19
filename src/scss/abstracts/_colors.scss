@@ -12,9 +12,6 @@ $borderneutral: #e1e1e1;
 .text-black {
   color: $black;
 }
-.text-neutral {
-  color: $neutral;
-}
 .text-primary {
   color: $primary;
 }
@@ -35,4 +32,7 @@ $borderneutral: #e1e1e1;
 }
 .bg-tertiary {
   background-color: $tertiary;
+}
+.text-shadow {
+  text-shadow: 15px 5px 10px $black;
 }
