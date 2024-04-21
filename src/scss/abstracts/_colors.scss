@@ -1,0 +1,38 @@
+$white: #ffffff;
+$black: #141415;
+$neutral: #0e0e0e;
+$primary: #0672cb;
+$secondary: #636363;
+$tertiary: #f5f6f7;
+$borderneutral: #e1e1e1;
+
+.text-white {
+  color: $white;
+}
+.text-black {
+  color: $black;
+}
+.text-primary {
+  color: $primary;
+}
+.text-secondary {
+  color: $secondary;
+}
+.text-tertiary {
+  color: $tertiary;
+}
+.text-borderneutral {
+  color: $borderneutral;
+}
+.bg-primary {
+  background-color: $primary;
+}
+.bg-black {
+  background-color: $black;
+}
+.bg-tertiary {
+  background-color: $tertiary;
+}
+.text-shadow {
+  text-shadow: 15px 5px 10px $black;
+}

@@ -1,0 +1,9 @@
+@import "abstracts/index";
+@import "mixins/breakpoints";
+
+.html,
+body {
+  font-family: $primaryfont;
+  font-weight: $light-bold;
+  color: $neutral;
+}
