@@ -5,6 +5,7 @@ $primary: #0672cb;
 $secondary: #636363;
 $tertiary: #f5f6f7;
 $borderneutral: #e1e1e1;
+$red: #ff2e2e;
 
 .text-white {
   color: $white;
@@ -35,4 +36,7 @@ $borderneutral: #e1e1e1;
 }
 .text-shadow {
   text-shadow: 15px 5px 10px $black;
+}
+.error-text {
+  color: $red;
 }
