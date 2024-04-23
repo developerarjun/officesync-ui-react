@@ -1,2 +1,2 @@
 export * from './interface/index';
-export * from './input-error'
+export * from './function/index'

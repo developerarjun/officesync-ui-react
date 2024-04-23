@@ -1,19 +1,16 @@
 import "./LoginPage.scss";
 import { FormProvider, useForm } from "react-hook-form";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { LOGIN_FORM_FIELD } from "./data-access/models/login-input.model";
-import InputComponent from "../../shared/components/input/InputComponent";
+import InputComponent from "../../../shared/components/input/input.component";
 
 function LoginPage() {
   const methods = useForm();
   const navigate = useNavigate();
 
-  const [success, setSuccess] = useState(false)
   const onSubmit = methods.handleSubmit(data => {
     console.log(data);
     methods.reset();
-    setSuccess(true);
   })
 
   return (

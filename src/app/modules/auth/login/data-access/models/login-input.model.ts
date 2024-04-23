@@ -1,4 +1,4 @@
-import { FormInputInterface } from "../../../../../utils/interface/input-form.interface";
+import { FormInputInterface } from "../../../../../shared/utils";
 
 export const LOGIN_FORM_FIELD : Array<FormInputInterface> = [
     {

@@ -1,7 +1,5 @@
 import { useFormContext } from "react-hook-form";
-import { FormInputInterface, findInputError } from "../../../../utils";
-import "./InputComponent.scss";
-import { isFormInvalid } from "../../../../utils/is-form-invalid";
+import { FormInputInterface, findInputError, isFormInvalid } from "../../utils";
 
 function InputComponent({
     name,
