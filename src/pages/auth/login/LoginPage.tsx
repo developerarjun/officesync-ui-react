@@ -1,20 +1,21 @@
-import { useEffect } from "react";
 import "./LoginPage.scss";
+import { FormProvider, useForm } from "react-hook-form";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useForm } from "react-hook-form";
-import { error } from "../../../utils";
+import { LOGIN_FORM_FIELD } from "./data-access/models/login-input.model";
+import InputComponent from "../../shared/components/input/InputComponent";
 
 function LoginPage() {
-  useEffect(() => {}, []);
+  const methods = useForm();
   const navigate = useNavigate();
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-  const onSubmit = (data: any) => console.log(data);
 
-  console.log(errors);
+  const [success, setSuccess] = useState(false)
+  const onSubmit = methods.handleSubmit(data => {
+    console.log(data);
+    methods.reset();
+    setSuccess(true);
+  })
+
   return (
     <div className="loginContainer">
       <div className="loginleftSideContainer flex flex-row">
@@ -30,10 +31,7 @@ function LoginPage() {
           </label>
         </div>
       </div>
-      <form
-        className="loginForm flex flex-column"
-        onSubmit={handleSubmit(onSubmit)}
-      >
+     
         <div className="flex content-center">
           <img
             src="/images/office-logo.png"
@@ -41,48 +39,19 @@ function LoginPage() {
             className="appLogo"
           ></img>
         </div>
+      <FormProvider {...methods}>
+      <form
+        className="loginForm flex flex-column"
+        onSubmit={onSubmit}  
+        autoComplete="off"
+      >
         <label className="titleText text-neutral heading-three">Sign in</label>
         <label className=" regular-font text-neutral body-one">
           Please enter your email and password
         </label>
-        <label className="email regular-font text-neutral body-two">
-          Email
-        </label>
-        <input
-          type="text"
-          placeholder={"Enter your email"}
-          className="emailInput text-secondary bg-tertiary"
-          {...register("email", {
-            required: true,
-            pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-          })}
-        />
-        {errors.email && errors.email.type === "required" && (
-          <span className="error-text regular-font body-two">
-            {error.email_required}
-          </span>
-        )}
-        {errors.email && errors.email.type === "pattern" && (
-          <span className="error-text regular-font body-two">
-            {error.email_invalid}
-          </span>
-        )}
-
-        <label className="email regular-font text-neutral body-two">
-          Password
-        </label>
-
-        <input
-          type="password"
-          placeholder={"Enter your password"}
-          className="passwordInput text-secondary bg-tertiary"
-          {...register("password", { required: true })}
-        />
-        {errors.password && (
-          <span className="error-text regular-font body-two">
-            {error.password_required}
-          </span>
-        )}
+          {LOGIN_FORM_FIELD && LOGIN_FORM_FIELD.map(field=>
+            <InputComponent {...field} />
+          )}
         <label
           className="forgotPasswordText secondary-font text-neutral display-one"
           onClick={() => navigate("/forgot-password")}
@@ -107,6 +76,7 @@ function LoginPage() {
           </div>
         </div>
       </form>
+      </FormProvider>
     </div>
   );
 }

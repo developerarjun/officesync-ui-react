@@ -1,1 +1,2 @@
-export { default as error } from "./error";
+export * from './interface/index';
+export * from './input-error'
