@@ -48,7 +48,7 @@
     }
     .appLogo {
       height: 1.375rem;
-      padding: 3.125rem;
+      padding: 3.125rem 0;
     }
 
     .titleText {
@@ -63,14 +63,8 @@
       padding-top: 0.25rem;
       margin-top: 0.625rem;
     }
-    .emailInput {
-      height: 2.25rem;
-      border: 1px solid $borderneutral;
-      padding-left: 0.625rem;
-      border-radius: 0.313rem;
-    }
-    .passwordInput {
-      height: 2.25rem;
+    input,select{
+      height: 2.45rem;
       border: 1px solid $borderneutral;
       padding-left: 0.625rem;
       border-radius: 0.313rem;

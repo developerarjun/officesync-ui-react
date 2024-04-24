@@ -29,19 +29,20 @@ function LoginPage() {
         </div>
       </div>
      
-        <div className="flex content-center">
-          <img
-            src="/images/office-logo.png"
-            alt="app logo"
-            className="appLogo"
-          ></img>
-        </div>
+       
       <FormProvider {...methods}>
       <form
         className="loginForm flex flex-column"
         onSubmit={onSubmit}  
         autoComplete="off"
       >
+         <div className="flex items-center">
+          <img
+            src="/images/office-logo.png"
+            alt="app logo"
+            className="appLogo"
+          ></img>
+        </div>
         <label className="titleText text-neutral heading-three">Sign in</label>
         <label className=" regular-font text-neutral body-one">
           Please enter your email and password
