@@ -47,7 +47,8 @@
       width: 75%;
     }
     .appLogo {
-      height: 1.375rem;
+      // height: 1.375rem;
+      height: 100%;
       padding: 3.125rem 0;
     }
 
@@ -64,8 +65,9 @@
       margin-top: 0.625rem;
     }
     input,select{
-      height: 2.45rem;
+      height: 3.125rem;
       border: 1px solid $borderneutral;
+      background-color: #f5f6f7;
       padding-left: 0.625rem;
       border-radius: 0.313rem;
     }

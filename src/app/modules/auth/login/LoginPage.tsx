@@ -32,16 +32,19 @@ function LoginPage() {
        
       <FormProvider {...methods}>
       <form
-        className="loginForm flex flex-column"
+        className="loginForm flex flex-column align-center justify-center"
         onSubmit={onSubmit}  
         autoComplete="off"
       >
-         <div className="flex items-center">
+         <div className="text-align-center">
           <img
             src="/images/office-logo.png"
             alt="app logo"
             className="appLogo"
           ></img>
+        </div>
+        <div className="inner-wrapper">
+          
         </div>
         <label className="titleText text-neutral heading-three">Sign in</label>
         <label className=" regular-font text-neutral body-one">
