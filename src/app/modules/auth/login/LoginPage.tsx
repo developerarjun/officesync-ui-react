@@ -43,9 +43,6 @@ function LoginPage() {
             className="appLogo"
           ></img>
         </div>
-        <div className="inner-wrapper">
-          
-        </div>
         <label className="titleText text-neutral heading-three">Sign in</label>
         <label className=" regular-font text-neutral body-one">
           Please enter your email and password

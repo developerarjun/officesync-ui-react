@@ -67,9 +67,12 @@
     input,select{
       height: 3.125rem;
       border: 1px solid $borderneutral;
-      background-color: #f5f6f7;
+      background-color: $tertiary;
       padding-left: 0.625rem;
       border-radius: 0.313rem;
+    }
+    ::placeholder{
+      color: $secondary;
     }
     .forgotPasswordText {
       text-align: end;
