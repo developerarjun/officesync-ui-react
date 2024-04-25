@@ -1,5 +1,6 @@
 import { useFormContext } from "react-hook-form";
-import { FormInputInterface, findInputError, isFormInvalid } from "../../utils";
+import { FormInputInterface } from "../../utils/interface";
+import { findInputError, isFormInvalid } from "../../utils/function";
 
 function InputComponent({
     name,
@@ -19,10 +20,12 @@ function InputComponent({
       const isInvalid = isFormInvalid(inputErrors);
   return (
     <>
-     <label className="email regular-font text-neutral body-two">
-          {label}
-    </label>
-    <input
+      <div className="mb-3">
+          <label htmlFor="password" className="form-label">{label}
+              <span className="text-danger">*</span>
+          </label>
+          <div className={className}>
+          <input
           id={id}
           type={type}
           className={className}
@@ -35,6 +38,8 @@ function InputComponent({
                             key={inputErrors.error.message} />
             )
         }
+          </div>
+      </div>
     </>
   );
 }

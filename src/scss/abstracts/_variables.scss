@@ -1,0 +1,32 @@
+// FONTS
+
+// Font Weight
+
+
+$bold: 700;
+$semi-bold: 600;
+$light-bold: 500;
+$regular: 400;
+
+$primaryfont: "Rubik";
+$secondaryfont: "Roboto";
+
+.font {
+    font-family: $primaryfont;
+}
+
+.bold {
+    font-weight: $bold;
+}
+
+.semi-bold {
+    font-weight: $semi-bold;
+}
+
+.light-bold {
+    font-weight: $light-bold;
+}
+
+.regular {
+    font-weight: $regular;
+}

@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.font {
+    font-family: $primaryfont;
+}
+
+.heading {
+    font-weight: $bold;
+    font-family: $primaryfont;
+}
+
+.h1,
+h1 {
+    font-size: rem(24);
+    line-height: rem(28.8);
+}
+
+.h2,
+h2 {
+    font-size: rem(18);
+    line-height: rem(28.8);
+}
+
+.h3,
+h3 {
+    font-size: rem(16);
+    font-weight: rem(25.6);
+}
+
+.base-font {
+    font-size: rem(16);
+    line-height: rem(25.6);
+    font-weight: $regular;
+}
+
+.body-font {
+    font-size: rem(16);
+    line-height: rem(25.6);
+    font-weight: $semi-bold;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-weight: $bold;
+}

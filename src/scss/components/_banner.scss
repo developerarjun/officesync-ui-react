@@ -1,0 +1,29 @@
+.auth-banner {
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    &:after {
+        content: '';
+        background-color: $primary;
+        width: 100%;
+        height: 100%;
+        opacity: 0.7;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+    }
+    &.welcome-banner,
+    .login-banner {
+        background-image: url('/src/assets/images/login-banner.png');
+    }
+    h2 {
+        font-size: 3.5rem;
+    }
+    .auth-content {
+        max-width: 47.5rem;
+        margin: 0 5.5rem 8.5rem 5.5rem;
+        z-index: 1;
+    }
+}
