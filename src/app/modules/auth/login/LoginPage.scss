@@ -16,7 +16,7 @@
     overflow-y: hidden;
     background-size: cover;
     background-position: 50% 50%;
-    background-attachment: fixed;
+    // background-attachment: fixed;
     background-repeat: no-repeat;
     padding-left: 4.375rem;
     position: relative;
@@ -31,7 +31,7 @@
       bottom: 0;
       left: 0;
       z-index: -1;
-      opacity: 0.4;
+      opacity: 0.1;
     }
 
     .bgText {
@@ -83,7 +83,7 @@
       margin-top: 2.188rem;
       .submitButton {
         width: 30%;
-        height: 2.5rem;
+        height: 3.125rem;
         border-radius: 0.25rem;
         border: 1px solid $primary;
         padding: 0.625rem;
