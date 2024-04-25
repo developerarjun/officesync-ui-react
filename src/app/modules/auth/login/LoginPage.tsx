@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { LOGIN_FORM_FIELD } from "./data-access/models/login-input.model";
 import InputComponent from "../../../shared/components/input/input.component";
 import AuthContentComponent from "../ui/auth-content.component";
+import ButtonComponent from "../../../shared/components/button/ButtonComponent";
 
 function LoginPage() {
   const methods = useForm();
@@ -40,49 +41,19 @@ function LoginPage() {
                         <div className="form-head">
                             <h1 className="heading">Sign In</h1>
                         </div>
-                        <form>
+                        <FormProvider {...methods}>
+                        <form onSubmit={onSubmit} autoComplete="off">
                             <div className="mb-3">
                                 <label htmlFor="email" className="form-label">Email
                                     <span className="text-danger">*</span></label>
-                                {/* <app-input
-                                    #appInput
-                                    [inputType]="'email'"
-                                    [inputClassName]="'form-control'"
-                                    [control]="getControl('email')"
-                                    [displayError]="displayMessage?.['email']"
-                                >
-                                </app-input> */}
+                                    <InputComponent {...LOGIN_FORM_FIELD[0]} />
                             </div>
 
                             <div className="mb-3">
                                 <label htmlFor="password" className="form-label">Password
                                     <span className="text-danger">*</span></label>
                                 <div className="input-password position-relative">
-                                    {/* <app-input
-                                        #appInput
-                                        [inputType]="
-                                            isShowPassword ? 'text' : 'password'
-                                        "
-                                        [inputClassName]="'form-control'"
-                                        [control]="getControl('password')"
-                                        [displayError]="
-                                            displayMessage?.['password']
-                                        "
-                                    >
-                                        <app-icon
-                                            [className]="
-                                                'eye-open position-absolute'
-                                            "
-                                            [customclass]="
-                                                isShowPassword
-                                                    ? 'pwd-hide'
-                                                    : 'pwd-view'
-                                            "
-                                            (iconClickEvent)="
-                                                showHidePassword()
-                                            "
-                                        ></app-icon>
-                                    </app-input> */}
+                                    <InputComponent {...LOGIN_FORM_FIELD[1]} />
                                 </div>
                             </div>
                             <div className="mb-3">
@@ -90,90 +61,20 @@ function LoginPage() {
                                     className="form-check d-flex flex-wrap justify-content-between"
                                 >
                                     <div className="forgot-password">
-                                        {/* <a
-                                            routerLink="/accounts/forgot-password"
-                                            >Forgot Password</a
-                                        > */}
+                                        <a
+                                            onClick={() => navigate("/forgot-password")}>Forgot Password</a>
                                     </div>
                                 </div>
                             </div>
-                            {/* <app-button
-                                [isLoading]="isSubmitted"
-                                [btnType]="'submit'"
-                                [btnClassName]="'btn btn-primary'"
-                                [btnText]="'Sign in'"
-                                [isDisabled]="isSubmitted"
-                            >
-                            </app-button> */}
+                            <ButtonComponent btnName="Login" className="btn btn-primary" btnType="submit" isDisabled={false}></ButtonComponent>
                         </form>
+                        </FormProvider>
                     </div>
                 </div>
             </div>
         </div>
        </div>
     </section>
-
-    // <div className="loginContainer">
-    //   <div className="loginleftSideContainer flex flex-row">
-    //     <div className="loginLeftSideContainerOverlay bg-black" />
-    //     <div className="bgText flex flex-column items-start justify-end">
-    //       <label className="text-white heading-one text-shadow">
-    //         Welcome Back!
-    //       </label>
-    //       <label className="text-white heading-two text-shadow">
-    //         Ready to
-    //         <br />
-    //         get Started
-    //       </label>
-    //     </div>
-    //   </div>
-     
-    //     <div className="flex content-center">
-    //       <img
-    //         src="/images/office-logo.png"
-    //         alt="app logo"
-    //         className="appLogo"
-    //       ></img>
-    //     </div>
-    //   <FormProvider {...methods}>
-    //   <form
-    //     className="loginForm flex flex-column"
-    //     onSubmit={onSubmit}  
-    //     autoComplete="off"
-    //   >
-    //     <label className="titleText text-neutral heading-three">Sign in</label>
-    //     <label className=" regular-font text-neutral body-one">
-    //       Please enter your email and password
-    //     </label>
-    //       {LOGIN_FORM_FIELD && LOGIN_FORM_FIELD.map(field=>
-    //         <InputComponent {...field} />
-    //       )}
-    //     <label
-    //       className="forgotPasswordText secondary-font text-neutral display-one"
-    //       onClick={() => navigate("/forgot-password")}
-    //     >
-    //       Forgot Password?
-    //     </label>
-
-    //     <div className="buttonWrapper flex flex-column content-center">
-    //       <button
-    //         type="submit"
-    //         className="submitButton text-white regular-font bg-primary display-two"
-    //       >
-    //         Sign in
-    //       </button>
-    //       <div className="signUpWrapper flex flex-row mt-5">
-    //         <label className=" regular-font text-neutral display-one">
-    //           Don’t have an account yet?
-    //         </label>
-    //         <label className="signupText text-primary regular-font display-one">
-    //           Sign up
-    //         </label>
-    //       </div>
-    //     </div>
-    //   </form>
-    //   </FormProvider>
-    // </div>
   );
 }
 

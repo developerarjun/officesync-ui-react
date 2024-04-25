@@ -1,4 +1,4 @@
-import { FormInputInterface } from "../../../../../shared/utils";
+import { FormInputInterface } from "../../../../../shared/utils/interface";
 
 export const LOGIN_FORM_FIELD : Array<FormInputInterface> = [
     {
@@ -6,8 +6,8 @@ export const LOGIN_FORM_FIELD : Array<FormInputInterface> = [
         label: 'name',
         type: 'text',
         id: 'name',
-        placeholder: 'write your name ...',
-        className: '',
+        placeholder: 'Email or username',
+        className: 'form-control',
         validation: {
           required: {
             value: true,
@@ -24,8 +24,8 @@ export const LOGIN_FORM_FIELD : Array<FormInputInterface> = [
         label: 'password',
         type: 'password',
         id: 'password',
-        placeholder: 'type password ...',
-        className: '',
+        placeholder: 'Password',
+        className: 'form-control',
         validation: {
           required: {
             value: true,

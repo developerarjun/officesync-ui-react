@@ -4,7 +4,6 @@ import { findInputError, isFormInvalid } from "../../utils/function";
 
 function InputComponent({
     name,
-    label,
     type,
     id,
     placeholder,
@@ -20,26 +19,19 @@ function InputComponent({
       const isInvalid = isFormInvalid(inputErrors);
   return (
     <>
-      <div className="mb-3">
-          <label htmlFor="password" className="form-label">{label}
-              <span className="text-danger">*</span>
-          </label>
-          <div className={className}>
-          <input
-          id={id}
-          type={type}
-          className={className}
-          placeholder={placeholder}
-          {...register(name, validation)}
-        />
-        {
-            isInvalid && (
-                <InputError message={inputErrors.error.message}
-                            key={inputErrors.error.message} />
-            )
-        }
-          </div>
-      </div>
+        <input
+        id={id}
+        type={type}
+        className={className}
+        placeholder={placeholder}
+        {...register(name, validation)}
+      />
+      {
+          isInvalid && (
+              <InputError message={inputErrors.error.message}
+                          key={inputErrors.error.message} />
+          )
+      }
     </>
   );
 }
@@ -48,9 +40,9 @@ function InputComponent({
 
 const InputError = ({message}: any) => {
     return (
-        <span className="error-text regular-font body-two">
-            {message}
-          </span>
+      <div className="error__div error">
+                <small className="error__text">{ message }</small>
+        </div>
     )
   }
   
