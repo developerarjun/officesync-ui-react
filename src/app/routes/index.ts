@@ -1,8 +1,9 @@
-import ForgotPasswordPage from "../pages/auth/forgot-password/ForgotPasswordPage";
-import LoginPage from "../pages/auth/login/LoginPage";
-import AuthLayout from "../pages/shared/layouts/auth-layout/auth-layout";
+
+import AuthLayout from "../layout/auth-layout/auth-layout";
+import ForgotPasswordPage from "../modules/auth/forgot-password/ForgotPasswordPage";
+import LoginPage from "../modules/auth/login/LoginPage";
+import { RouteConfigInterface } from "../shared/utils";
 import { renderRoutes } from "./generate-routes";
-import { RouteConfigInterface } from "./interfaces/RouteInterface";
 
 export const routes: RouteConfigInterface[] = [
   {

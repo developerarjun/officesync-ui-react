@@ -1,9 +1,5 @@
+@import "vendors/index";
 @import "abstracts/index";
+@import "base/index";
 @import "mixins/breakpoints";
-
-.html,
-body {
-  font-family: $primaryfont;
-  font-weight: $light-bold;
-  color: $neutral;
-}
+@import "components/index";

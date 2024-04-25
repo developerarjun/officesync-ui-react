@@ -1,0 +1,15 @@
+p {
+    line-height: rem(25.6);
+}
+
+a,
+a:not([href]):not([class]),
+a:not([href]):not([class]):hover {
+    color: $secondary;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+* {
+    font-family: $primaryfont;
+}

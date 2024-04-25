@@ -1,0 +1,17 @@
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/_variables-dark';
+@import 'bootstrap/scss/maps';
+@import 'bootstrap/scss/mixins';
+@import 'bootstrap/scss/forms';
+a {
+    color: $secondary;
+}
+
+.form-check {
+    padding: 0;
+}
+
+.toast-container {
+    position: fixed;
+}

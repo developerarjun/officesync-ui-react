@@ -1,51 +1,39 @@
-.heading-one {
-  font-size: 2.289rem;
-  line-height: 2.746rem;
+.head-one {
+  font-size: rem(32);
+  line-height: 120%;
+  font-weight: $bold;
 }
-.heading-two {
-  font-size: 2.861rem;
-  line-height: 3.434rem;
+
+.head-two {
+  font-size: rem(24);
+  line-height: 120%;
+  font-weight: $bold;
 }
-.heading-three {
-  font-size: 2.125rem;
-  line-height: 2.746rem;
+
+.head-three {
+  font-size: rem(18);
+  line-height: 160%;
+  font-weight: $bold;
 }
-.body-one {
-  font-size: 0.813rem;
-  line-height: 0.9rem;
+
+.body-base {
+  font-size: rem(16);
+  line-height: 160%;
+  font-weight: $regular;
 }
-.body-two {
-  font-size: 0.938rem;
-  line-height: 1.5rem;
+
+.body-font {
+  @extend .body-base;
+  font-weight: $semi-bold;
 }
-.display-one {
-  font-size: 0.75rem;
+
+.bold {
+  font-weight: $bold;
 }
-.display-two {
-  font-size: 1rem;
+
+.height-full {
+  height: 100vh;
 }
-.flex {
-  display: flex;
-}
-.flex-row {
-  flex-direction: row;
-}
-.flex-column {
-  flex-direction: column;
-}
-.justify-center {
-  justify-content: center;
-}
-.justify-end {
-  justify-content: flex-end;
-}
-.items-center {
-  align-items: center;
-}
-.items-start {
-  align-items: flex-start;
-}
-.content-center {
-  justify-content: center;
-  align-items: center;
+.display-ib {
+  display: inline-block;
 }
