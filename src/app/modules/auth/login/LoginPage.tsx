@@ -62,7 +62,7 @@ function LoginPage() {
                                 >
                                     <div className="forgot-password">
                                         <a
-                                            onClick={() => navigate("/forgot-password")}>Forgot Password</a>
+                                            onClick={() => navigate("/forgot-password")}>Forgot Password ?</a>
                                     </div>
                                 </div>
                             </div>
