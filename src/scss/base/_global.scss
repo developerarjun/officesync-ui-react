@@ -5,7 +5,7 @@ p {
 a,
 a:not([href]):not([class]),
 a:not([href]):not([class]):hover {
-    color: $secondary;
+    color: $primary-500;
     text-decoration: none;
     cursor: pointer;
 }

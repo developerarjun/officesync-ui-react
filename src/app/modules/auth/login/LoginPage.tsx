@@ -67,6 +67,7 @@ function LoginPage() {
                                 </div>
                             </div>
                             <ButtonComponent btnName="Login" className="btn btn-primary" btnType="submit" isDisabled={false}></ButtonComponent>
+                            <p className="mt-3">Don't have an account yet? <a onClick={() => navigate("/sign-up")}>sign-up</a></p>
                         </form>
                         </FormProvider>
                     </div>
