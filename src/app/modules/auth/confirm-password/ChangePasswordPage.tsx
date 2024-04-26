@@ -1,14 +1,11 @@
 import { FormProvider, useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
-import { CHANGE_PASSWORD_FORM_FIELD } from "../login/data-access/models/change-password.model";
 import InputComponent from "../../../shared/components/input/input.component";
 import AuthContentComponent from "../ui/auth-content.component";
 import ButtonComponent from "../../../shared/components/button/ButtonComponent";
+import { CHANGE_PASSWORD_FORM_FIELD } from "./data-access/models/change-password.model";
 
 function ChangePasswordPage() {
   const methods = useForm();
-  const navigate = useNavigate();
-
   const onSubmit = methods.handleSubmit(data => {
     console.log(data);
     methods.reset();

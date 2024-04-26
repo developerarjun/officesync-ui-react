@@ -1,7 +1,6 @@
 
 import AuthLayout from "../layout/auth-layout/auth-layout";
 import ChangePasswordPage from "../modules/auth/confirm-password/ChangePasswordPage";
-import ConfirmPasswordPage from "../modules/auth/confirm-password/ChangePasswordPage";
 import ForgotPasswordPage from "../modules/auth/forgot-password/ForgotPasswordPage";
 import LoginPage from "../modules/auth/login/LoginPage";
 import { RouteConfigInterface } from "../shared/utils/interface";
