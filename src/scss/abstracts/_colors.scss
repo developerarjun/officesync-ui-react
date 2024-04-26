@@ -1,38 +1,80 @@
-$white: #ffffff;
-$black: #141415;
-$neutral: #0e0e0e;
-$primary: #0672cb;
-$secondary: #636363;
-$tertiary: #f5f6f7;
-$borderneutral: #e1e1e1;
+// Colors
+$primary: #0872CB;
+$primary-05:#0872cb63;
+$primary-20: #f2f6fa;
+$primary-50: #c6d8e7;
+$primary-100: #a2c1dc;
+$primary-200: #75a3c9;
+$primary-300: #4885b7;
+$primary-400: #1b67a5;
+$primary-500: #0872cb;
+$primary-600: #075fa9;
+$primary-700: #054c87;
+$primary-800: #043965;
+$primary-900: #032643;
+$primary-1000: #011320;
 
-.text-white {
-  color: $white;
+$secondary: #636363;
+$secondary-50: #e6e6e6;
+$secondary-100: #cccccc;
+$secondary-200: #b3b3b3;
+$secondary-300: #999999;
+$secondary-400: #7f7f7f;
+$secondary-500: #636363;
+$secondary-600: #4d4d4d;
+$secondary-700: #333333;
+$secondary-800: #1a1a1a;
+$secondary-900: #000000;
+$secondary-1000: #000000; 
+
+$dark: #0e0f10;
+$dark-200: #878788;
+$dark-300: #5e5f60;
+$dark-400: #363738;
+
+$light: #ffffff;
+$light-100: #fafafa;
+$light-200: #ebebeb;
+$light-300: #cfcfcf;
+
+// State colors
+$error: #DC3545;
+$warning: #FFC107;
+$success: #198754;
+$info: #198754;
+
+.primary {
+    color: $primary;
 }
-.text-black {
-  color: $black;
+
+.secondary {
+    color: $secondary;
 }
-.text-primary {
-  color: $primary;
+
+.dark {
+    color: $dark;
 }
-.text-secondary {
-  color: $secondary;
+
+.light {
+    color: $light;
 }
-.text-tertiary {
-  color: $tertiary;
+
+.error {
+    color: $error;
 }
-.text-borderneutral {
-  color: $borderneutral;
+
+.warning {
+    color: $warning;
 }
-.bg-primary {
-  background-color: $primary;
+
+.success {
+    color: $success;
 }
-.bg-black {
-  background-color: $black;
+
+.info {
+    color: $info;
 }
-.bg-tertiary {
-  background-color: $tertiary;
-}
-.text-shadow {
-  text-shadow: 15px 5px 10px $black;
+
+.dark-200 {
+    color: $dark-200;
 }
