@@ -1,14 +1,11 @@
 import { FormProvider, useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
-import { FORGET_PASSSWORD_FORM_FIELD } from "../login/data-access/models/forget-password-input.model";
 import InputComponent from "../../../shared/components/input/input.component";
 import AuthContentComponent from "../ui/auth-content.component";
 import ButtonComponent from "../../../shared/components/button/ButtonComponent";
+import { CHANGE_PASSWORD_FORM_FIELD } from "./data-access/models/change-password.model";
 
-function ForgotPasswordPage() {
+function ChangePasswordPage() {
   const methods = useForm();
-  const navigate = useNavigate();
-
   const onSubmit = methods.handleSubmit(data => {
     console.log(data);
     methods.reset();
@@ -39,29 +36,26 @@ function ForgotPasswordPage() {
                     </div>
                     <div className="auth-form">
                         <div className="form-head">
-                            <h1 className="heading">Forget Password?</h1>
-                            <p>Please enter your email</p>
+                            <h1 className="heading">Password Change</h1>
                         </div>
                         <FormProvider {...methods}>
                         <form onSubmit={onSubmit} autoComplete="off">
                             <div className="mb-3">
-                                <label htmlFor="email" className="form-label">Email
+                                <label htmlFor="email" className="form-label">New Password
                                     <span className="text-danger">*</span></label>
-                                    <InputComponent {...FORGET_PASSSWORD_FORM_FIELD[0]} />
+                                    <InputComponent {...CHANGE_PASSWORD_FORM_FIELD[0]} />
                             </div>
 
-          
-                            <div className="mb-3">  
-                                <div
-                                    className="form-check d-flex flex-wrap justify-content-between"
-                                >
-                                    <div className="forgot-password">
-                                        <a
-                                            onClick={() => navigate("/login")}>Go Back</a>
-                                    </div>
+                            <div className="mb-3">
+                                <label htmlFor="password" className="form-label">Confirm New Password
+                                    <span className="text-danger">*</span></label>
+                                <div className="input-password position-relative">
+                                    <InputComponent {...CHANGE_PASSWORD_FORM_FIELD[1]} />
                                 </div>
                             </div>
+                            
                             <ButtonComponent btnName="Submit" className="btn btn-primary" btnType="submit" isDisabled={false}></ButtonComponent>
+                        
                         </form>
                         </FormProvider>
                     </div>
@@ -73,6 +67,4 @@ function ForgotPasswordPage() {
   );
 }
 
-export default ForgotPasswordPage;
-
-  
+export default ChangePasswordPage;

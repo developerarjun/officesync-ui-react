@@ -18,15 +18,15 @@ body {
         }
 
         &-primary {
-            background: $secondary 100%;
-            border: 1px solid $secondary;
+            background: $primary 100%;
+            border: 1px solid $primary;
             color: $light;
-            box-shadow: 0px 6px 24px -8px rgba($secondary-500, 0.24);
+            box-shadow: 0px 6px 24px -8px rgba($primary-500, 0.24);
 
             &:hover {
-                background: $secondary-400;
-                box-shadow: 0px 6px 24px -8px rgba($secondary-500, 0.24);
-                border: 1px solid $secondary-400;
+                background: $primary-400;
+                box-shadow: 0px 6px 24px -8px rgba($primary-500, 0.24);
+                border: 1px solid $primary-400;
             }
 
             &:active,
