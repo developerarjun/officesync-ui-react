@@ -2,8 +2,10 @@
 import AuthLayout from "../layout/auth-layout/auth-layout";
 import ChangePasswordPage from "../modules/auth/confirm-password/ChangePasswordPage";
 import ConfirmPasswordPage from "../modules/auth/confirm-password/ChangePasswordPage";
+import ConfirmSecurityCodePage from "../modules/auth/confirm-security-code/ConfirmSecurityCodePage";
 import ForgotPasswordPage from "../modules/auth/forgot-password/ForgotPasswordPage";
 import LoginPage from "../modules/auth/login/LoginPage";
+
 import { RouteConfigInterface } from "../shared/utils/interface";
 import { renderRoutes } from "./generate-routes";
 
@@ -40,6 +42,14 @@ export const routes: RouteConfigInterface[] = [
         title: "Change Password",
         component: ChangePasswordPage,
         path: "/change-password",
+        isPublic: true,
+        isAuthorized: false,
+      },
+      {
+        name: "confirmSecurityCode",
+        title: "Confirm Security Code",
+        component: ConfirmSecurityCodePage,
+        path: "/confirm-security-code",
         isPublic: true,
         isAuthorized: false,
       },

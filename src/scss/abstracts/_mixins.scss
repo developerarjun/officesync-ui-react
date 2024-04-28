@@ -4,7 +4,7 @@
 // ----
 // rem mixins
 // ----
-$rem-base: 16px !default;
+$rem-base: 15px !default;
 // list-separator polyfill by Hugo Giraudel (https://sass-compatibility.github.io/#list_separator_function)
 @function rem-separator($list) {
     @if function-exists('list-separator') ==true {
@@ -18,7 +18,7 @@ $rem-base: 16px !default;
 }
 
 @mixin rem-base($zoom: 100%) {
-    font-size: $zoom / 16px * $rem-base;
+    font-size: $zoom / 15px * $rem-base;
 }
 
 @function rem-convert($to, $values...) {
