@@ -1,7 +1,8 @@
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
-import "./scss/style.scss"
+import "./scss/style.scss";
 import { Routes } from "./app/routes";
+import "./app/shared/utils/axios";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <BrowserRouter>
