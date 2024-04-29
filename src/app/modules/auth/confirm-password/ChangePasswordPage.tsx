@@ -7,7 +7,6 @@ import { CHANGE_PASSWORD_FORM_FIELD } from "./data-access/models/change-password
 function ChangePasswordPage() {
   const methods = useForm();
   const onSubmit = methods.handleSubmit(data => {
-    console.log(data);
     methods.reset();
   })
 

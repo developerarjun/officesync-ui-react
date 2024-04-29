@@ -4,18 +4,18 @@ import { LOGIN_FORM_FIELD } from "./data-access/models/login-input.model";
 import InputComponent from "../../../shared/components/input/input.component";
 import AuthContentComponent from "../ui/auth-content.component";
 import ButtonComponent from "../../../shared/components/button/ButtonComponent";
-import axios from "axios";
+import axiosInstance from "../../../shared/utils/interceptors/token.interceptor";
+
 
 function LoginPage() {
   const methods = useForm();
   const navigate = useNavigate();
 
   const onSubmit = methods.handleSubmit(async (data) => {
-    const response = await axios.post("/Accounts/login", {
+    const response = await axiosInstance.post("/accounts/login", {
       ...data,
     });
 
-    console.log(response.data);
 
     methods.reset();
   });

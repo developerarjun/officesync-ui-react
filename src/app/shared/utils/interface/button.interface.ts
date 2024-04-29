@@ -3,4 +3,5 @@ export interface ButtonInterface {
     btnType: 'submit' | 'button';
     isDisabled: boolean;
     btnName: string;
+    isLoading?: boolean;
 }
