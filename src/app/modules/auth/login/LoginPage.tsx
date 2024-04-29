@@ -6,19 +6,18 @@ import AuthContentComponent from "../ui/auth-content.component";
 import ButtonComponent from "../../../shared/components/button/ButtonComponent";
 import axiosInstance from "../../../shared/utils/interceptors/token.interceptor";
 
-
 function LoginPage() {
   const methods = useForm();
   const navigate = useNavigate();
 
   const onSubmit = methods.handleSubmit(async (data) => {
-    const response = await axiosInstance.post("/accounts/login", {
+    await axiosInstance.post("accounts/request-change-password", {
       ...data,
+    }).then(() => {
+      navigate('/dashboard');
     });
+});
 
-
-    methods.reset();
-  });
 
   return (
     <section className="authentication">
@@ -38,7 +37,7 @@ function LoginPage() {
               <div className="header position-absolute">
                 <div className="logo">
                   <a>
-                    <img src="src/assets/images/office-logo.png" />
+                    <img src="/src/assets/images/office-logo.png" />
                   </a>
                 </div>
               </div>
@@ -48,27 +47,16 @@ function LoginPage() {
                 </div>
                 <FormProvider {...methods}>
                   <form onSubmit={onSubmit} autoComplete="off">
-                    <div className="mb-3">
-                      <label htmlFor="email" className="form-label">
-                        Email
-                        <span className="text-danger">*</span>
-                      </label>
-                      <InputComponent {...LOGIN_FORM_FIELD[0]} />
-                    </div>
-
-                    <div className="mb-3">
-                      <label htmlFor="password" className="form-label">
-                        Password
-                        <span className="text-danger">*</span>
-                      </label>
-                      <div className="input-password position-relative">
-                        <InputComponent {...LOGIN_FORM_FIELD[1]} />
-                      </div>
-                    </div>
+                  {
+                      LOGIN_FORM_FIELD && 
+                          LOGIN_FORM_FIELD.map(field => 
+                              <InputComponent {...field} />
+                          )
+                    }
                     <div className="mb-3">
                       <div className="form-check d-flex flex-wrap justify-content-between">
                         <div className="forgot-password">
-                          <a onClick={() => navigate("/forgot-password")}>
+                          <a onClick={() => navigate("/accounts/forgot-password")}>
                             Forgot Password
                           </a>
                         </div>

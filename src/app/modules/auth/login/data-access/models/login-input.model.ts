@@ -3,7 +3,7 @@ import { FormInputInterface } from "../../../../../shared/utils/interface";
 export const LOGIN_FORM_FIELD: Array<FormInputInterface> = [
   {
     name: "email",
-    label: "email",
+    label: "Email ",
     type: "text",
     id: "name",
     placeholder: "Email or username",
@@ -21,7 +21,7 @@ export const LOGIN_FORM_FIELD: Array<FormInputInterface> = [
   },
   {
     name: "password",
-    label: "password",
+    label: "Password ",
     type: "password",
     id: "password",
     placeholder: "Password",

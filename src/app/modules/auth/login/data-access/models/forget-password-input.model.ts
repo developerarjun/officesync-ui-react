@@ -3,7 +3,7 @@ import { FormInputInterface } from "../../../../../shared/utils/interface";
 export const FORGET_PASSSWORD_FORM_FIELD : FormInputInterface =
     {
         name: 'email',
-        label: 'email',
+        label: 'Email',
         type: 'text',
         id: 'email',
         placeholder: 'Email',
