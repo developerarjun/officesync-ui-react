@@ -1,5 +1,4 @@
 function AuthContentComponent({bannerHeader, bannerDesc,className}: any) {
-    console.log(bannerHeader)
     return (
         <div className={className}>
         <div className="auth-content">

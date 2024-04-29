@@ -4,14 +4,20 @@ import { FORGET_PASSSWORD_FORM_FIELD } from "../login/data-access/models/forget-
 import InputComponent from "../../../shared/components/input/input.component";
 import AuthContentComponent from "../ui/auth-content.component";
 import ButtonComponent from "../../../shared/components/button/ButtonComponent";
+import axiosInstance from "../../../shared/utils/interceptors/token.interceptor";
+import { toast } from "../../../shared/components/alert";
 
 function ForgotPasswordPage() {
   const methods = useForm();
   const navigate = useNavigate();
 
-  const onSubmit = methods.handleSubmit(data => {
-    console.log(data);
-    methods.reset();
+  const onSubmit = methods.handleSubmit(async (data) => {
+    await axiosInstance.post("accounts/request-change-password", {
+        ...data,
+      }).then(() => {
+        toast.success('If your email is valid, the link has been sent, please check your email to reset your password.','Success');
+        navigate('/login');
+      });
   })
 
   return (
@@ -47,21 +53,18 @@ function ForgotPasswordPage() {
                             <div className="mb-3">
                                 <label htmlFor="email" className="form-label">Email
                                     <span className="text-danger">*</span></label>
-                                    <InputComponent {...FORGET_PASSSWORD_FORM_FIELD[0]} />
+                                    <InputComponent {...FORGET_PASSSWORD_FORM_FIELD} />
                             </div>
 
-          
                             <div className="mb-3">  
-                                <div
-                                    className="form-check d-flex flex-wrap justify-content-between"
-                                >
+                                <div className="form-check d-flex flex-wrap justify-content-between">
                                     <div className="forgot-password">
                                         <a
                                             onClick={() => navigate("/login")}>Go Back</a>
                                     </div>
                                 </div>
                             </div>
-                            <ButtonComponent btnName="Submit" className="btn btn-primary" btnType="submit" isDisabled={false}></ButtonComponent>
+                            <ButtonComponent btnName="Submit" className="btn btn-primary" btnType="submit" isDisabled={methods.formState.isSubmitting} isLoading={methods.formState.isSubmitting}></ButtonComponent>
                         </form>
                         </FormProvider>
                     </div>

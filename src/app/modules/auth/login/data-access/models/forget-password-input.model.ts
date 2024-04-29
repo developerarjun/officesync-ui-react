@@ -1,6 +1,6 @@
 import { FormInputInterface } from "../../../../../shared/utils/interface";
 
-export const FORGET_PASSSWORD_FORM_FIELD : Array<FormInputInterface> = [
+export const FORGET_PASSSWORD_FORM_FIELD : FormInputInterface =
     {
         name: 'email',
         label: 'email',
@@ -18,5 +18,4 @@ export const FORGET_PASSSWORD_FORM_FIELD : Array<FormInputInterface> = [
             message: 'Invalid email address',
         },
         },
-      },
-];
+      };
