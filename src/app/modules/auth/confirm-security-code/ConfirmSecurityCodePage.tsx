@@ -1,7 +1,7 @@
 import { FormProvider, useForm } from "react-hook-form";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { CONFIM_SECURITY_CODE_FORM_FIELD } from "../login/data-access/models/confirm-security-code.model";
-import InputComponent from "../../../shared/components/input/input.component";
+import React, { useState, useRef } from 'react';
 import AuthContentComponent from "../ui/auth-content.component";
 import ButtonComponent from "../../../shared/components/button/ButtonComponent";
 
@@ -9,6 +9,51 @@ function ConfirmSecurityCodePage() {
   const methods = useForm();
   const navigate = useNavigate();
 
+  const [inputValues, setInputValues] = useState(['', '', '', '', '', '']);
+  const inputRefs = useRef<HTMLInputElement[]>(Array(6).fill(null));
+
+  
+
+  useEffect(() => {
+    // Focus on the first input field when the component mounts
+    inputRefs.current[0].focus();
+  }, []); 
+
+  const handleChange = (index: number, event: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = event.target;
+    const newInputValues = [...inputValues];
+    newInputValues[index] = value;
+    setInputValues(newInputValues);
+    if (value && index < 5) {
+      inputRefs.current[index + 1].focus();
+    }
+  };
+
+  const handlePaste = (event: React.ClipboardEvent<HTMLInputElement>)  => {
+    event.preventDefault();
+    const pasteData = event.clipboardData.getData('text');
+    const pasteDigits = pasteData.split('').slice(0, 6);
+    const newInputValues = [...inputValues];
+    pasteDigits.forEach((digit, index) => {
+      newInputValues[index] = digit;
+    });
+    setInputValues(newInputValues);
+    inputRefs.current[5].focus();
+  };
+
+  const handleKeyDown = (index: number, event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Backspace' && !inputValues[index] && index > 0) {
+      setInputValues(prevValues => {
+        const newValues = [...prevValues];
+        newValues[index - 1] = '';
+        return newValues;
+      });
+      inputRefs.current[index - 1].focus();
+    }
+  };
+
+ 
+//handle submit
   const onSubmit = methods.handleSubmit(data => {
     console.log(data);
     methods.reset();
@@ -53,7 +98,20 @@ function ConfirmSecurityCodePage() {
                             <div className="mb-3">
                                 <label htmlFor="email" className="form-label">Verification Code
                                     <span className="text-danger">*</span></label>
-                                    <InputComponent {...CONFIM_SECURITY_CODE_FORM_FIELD[0]} />
+                                    {/* <InputComponent {...CONFIM_SECURITY_CODE_FORM_FIELD[0]} /> */}
+                                    {inputValues.map((value, index) => (
+                                    <input
+                                        key={index}
+                                        type="text"
+                                        maxLength={1}
+                                        value={value}
+                                        onChange={(event) => handleChange(index, event)}
+                                        onKeyDown={(event) => handleKeyDown(index, event)}
+                                        onPaste={handlePaste} 
+                                        ref={(inputRef) => (inputRefs.current[index] = inputRef!)}
+                                        style={{ width: '30px', marginRight: '5px' }}
+                                    />
+                                    ))}
                             </div>
                             <ButtonComponent btnName="Go Back" className="btn btn-primary" btnType="submit" isDisabled={false}></ButtonComponent>
                             <ButtonComponent btnName="Verify Account" className="btn btn-primary mx-3" btnType="submit" isDisabled={false}></ButtonComponent>
