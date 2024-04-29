@@ -16,7 +16,7 @@ function ForgotPasswordPage() {
         ...data,
       }).then(() => {
         toast.success('If your email is valid, the link has been sent, please check your email to reset your password.','Success');
-        navigate('/login');
+        navigate('/accounts/login');
       });
   })
 
@@ -39,7 +39,7 @@ function ForgotPasswordPage() {
                     <div className="header position-absolute">
                         <div className="logo">
                             <a>
-                                <img src="src/assets/images/office-logo.png"/>
+                                <img src="/src/assets/images/office-logo.png"/>
                             </a>
                         </div>
                     </div>
@@ -50,17 +50,13 @@ function ForgotPasswordPage() {
                         </div>
                         <FormProvider {...methods}>
                         <form onSubmit={onSubmit} autoComplete="off">
-                            <div className="mb-3">
-                                <label htmlFor="email" className="form-label">Email
-                                    <span className="text-danger">*</span></label>
-                                    <InputComponent {...FORGET_PASSSWORD_FORM_FIELD} />
-                            </div>
+                            <InputComponent {...FORGET_PASSSWORD_FORM_FIELD} />
 
                             <div className="mb-3">  
                                 <div className="form-check d-flex flex-wrap justify-content-between">
                                     <div className="forgot-password">
                                         <a
-                                            onClick={() => navigate("/login")}>Go Back</a>
+                                            onClick={() => navigate("/accounts/login")}>Go Back</a>
                                     </div>
                                 </div>
                             </div>

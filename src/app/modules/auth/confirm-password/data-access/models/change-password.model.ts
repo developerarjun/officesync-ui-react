@@ -3,10 +3,10 @@ import { FormInputInterface } from "../../../../../shared/utils/interface";
 export const CHANGE_PASSWORD_FORM_FIELD : Array<FormInputInterface> = [
     {
         name: 'password',
-        label: 'password',
+        label: 'New Password ',
         type: 'password',
         id: 'password',
-        placeholder: 'Enter New Password',
+        placeholder: 'New Password',
         className: 'form-control',
         validation: {
           required: {
@@ -21,10 +21,10 @@ export const CHANGE_PASSWORD_FORM_FIELD : Array<FormInputInterface> = [
       },
     {
         name: 'confirm_password',
-        label: 'confirm_password',
+        label: 'Confirm Password ',
         type: 'password',
         id: 'password',
-        placeholder: 'Retype New Password',
+        placeholder: 'Confirm Password',
         className: 'form-control',
         validation: {
           required: {
@@ -39,3 +39,11 @@ export const CHANGE_PASSWORD_FORM_FIELD : Array<FormInputInterface> = [
       },
     
 ];
+
+
+export interface QueryResetPassword {
+  firstName : string;
+  lastName: string;
+  email: string;
+  token : string;
+}
