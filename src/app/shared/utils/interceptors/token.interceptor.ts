@@ -1,6 +1,6 @@
 import Axios from "axios";
 import setAxiosHeader from "./cache.interceptor";
-import { environment } from "../../../../environments/environment.example";
+import { environment } from "../../../../environments/environment";
 import { ResponseStatus } from "../enum/ResponseStatus";
 import { toast } from "../../components/alert";
 
