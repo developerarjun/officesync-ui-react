@@ -1,6 +1,6 @@
 // Colors
-$primary: #0872CB;
-$primary-05:#0872cb63;
+$primary: #0872cb;
+$primary-05: #0872cb63;
 $primary-20: #f2f6fa;
 $primary-50: #c6d8e7;
 $primary-100: #a2c1dc;
@@ -9,7 +9,7 @@ $primary-300: #4885b7;
 $primary-400: #1b67a5;
 $primary-500: #0872cb;
 $primary-600: #075fa9;
-$primary-700: #054c87;
+//$primary-700: #054c87;
 $primary-800: #043965;
 $primary-900: #032643;
 $primary-1000: #011320;
@@ -25,7 +25,7 @@ $secondary-600: #4d4d4d;
 $secondary-700: #333333;
 $secondary-800: #1a1a1a;
 $secondary-900: #000000;
-$secondary-1000: #000000; 
+$secondary-1000: #000000;
 
 $dark: #0e0f10;
 $dark-200: #878788;
@@ -38,43 +38,47 @@ $light-200: #ebebeb;
 $light-300: #cfcfcf;
 
 // State colors
-$error: #DC3545;
-$warning: #FFC107;
+$error: #dc3545;
+$error-background: #f9dfe2;
+$warning: #ffc107;
+$warning-background: #f7f6b8;
 $success: #198754;
-$info: #198754;
+$success-background: #d4f9e6;
+$info: #150ff9;
+$info-background: #bab8f7;
 
 .primary {
-    color: $primary;
+  color: $primary;
 }
 
 .secondary {
-    color: $secondary;
+  color: $secondary;
 }
 
 .dark {
-    color: $dark;
+  color: $dark;
 }
 
 .light {
-    color: $light;
+  color: $light;
 }
 
 .error {
-    color: $error;
+  color: $error;
 }
 
 .warning {
-    color: $warning;
+  color: $warning;
 }
 
 .success {
-    color: $success;
+  color: $success;
 }
 
 .info {
-    color: $info;
+  color: $info;
 }
 
 .dark-200 {
-    color: $dark-200;
+  color: $dark-200;
 }
