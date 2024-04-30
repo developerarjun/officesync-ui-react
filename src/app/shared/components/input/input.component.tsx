@@ -9,6 +9,7 @@ function InputComponent({
     placeholder,
     validation,
     className,
+    label
   }: FormInputInterface) {
 
     const {
@@ -19,6 +20,9 @@ function InputComponent({
       const isInvalid = isFormInvalid(inputErrors);
   return (
     <>
+    <div className="mb-3">
+        <label htmlFor={label} className="form-label">{label}
+            <span className="text-danger">*</span></label>
         <input
         id={id}
         type={type}
@@ -32,6 +36,7 @@ function InputComponent({
                           key={inputErrors.error.message} />
           )
       }
+      </div>
     </>
   );
 }

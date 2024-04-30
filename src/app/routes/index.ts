@@ -1,7 +1,6 @@
 
 import AuthLayout from "../layout/auth-layout/auth-layout";
 import ChangePasswordPage from "../modules/auth/confirm-password/ChangePasswordPage";
-import ConfirmPasswordPage from "../modules/auth/confirm-password/ChangePasswordPage";
 import ConfirmSecurityCodePage from "../modules/auth/confirm-security-code/ConfirmSecurityCodePage";
 import ForgotPasswordPage from "../modules/auth/forgot-password/ForgotPasswordPage";
 import LoginPage from "../modules/auth/login/LoginPage";
@@ -25,7 +24,7 @@ export const routes: RouteConfigInterface[] = [
         name: "login",
         title: "Login page",
         component: LoginPage,
-        path: "/login",
+        path: "accounts/login",
         isPublic: true,
         isAuthorized: false,
       },
@@ -33,7 +32,7 @@ export const routes: RouteConfigInterface[] = [
         name: "forgotPassword",
         title: "Forgot Password",
         component: ForgotPasswordPage,
-        path: "/forgot-password",
+        path: "accounts/forgot-password",
         isPublic: true,
         isAuthorized: false,
       },
@@ -41,7 +40,7 @@ export const routes: RouteConfigInterface[] = [
         name: "changePassword",
         title: "Change Password",
         component: ChangePasswordPage,
-        path: "/change-password",
+        path: "accounts/reset-password",
         isPublic: true,
         isAuthorized: false,
       },

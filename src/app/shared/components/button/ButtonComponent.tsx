@@ -4,7 +4,8 @@ function ButtonComponent({
     className,
     btnType,
     isDisabled,
-    btnName
+    btnName,
+    isLoading
   }: ButtonInterface) {
   return (
     <>
@@ -13,7 +14,7 @@ function ButtonComponent({
             disabled={isDisabled}
             type={btnType}>
             <span
-                className="{ 'spinner-border spinner-border-sm': isLoading }"
+                className={`${isLoading ? 'spinner-border spinner-border-sm':''}`}
                 role="status"
                 aria-hidden="true"
             ></span>

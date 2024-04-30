@@ -1,17 +1,45 @@
 import { FormProvider, useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
-import { CHANGE_PASSWORD_FORM_FIELD } from "../login/data-access/models/change-password.model";
 import InputComponent from "../../../shared/components/input/input.component";
 import AuthContentComponent from "../ui/auth-content.component";
 import ButtonComponent from "../../../shared/components/button/ButtonComponent";
+import { CHANGE_PASSWORD_FORM_FIELD, QueryResetPassword } from "./data-access/models/change-password.model";
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import axiosInstance from "../../../shared/utils/interceptors/token.interceptor";
+import { toast } from "../../../shared/components/alert";
 
 function ChangePasswordPage() {
-  const methods = useForm();
-  const navigate = useNavigate();
 
-  const onSubmit = methods.handleSubmit(data => {
-    console.log(data);
-    methods.reset();
+  const methods = useForm();  
+  const [searchParams] = useSearchParams();
+  const [params, setParams] = useState({} as QueryResetPassword);
+  const navigate = useNavigate();
+  
+  useEffect(()=> {
+    setParams({
+        firstName: searchParams.get('firstname'),
+        lastName: searchParams.get('lastname'),
+        email: searchParams.get('email'),
+        token: searchParams.get('token')
+      } as QueryResetPassword)
+      if(!searchParams.get('token')){
+        toast.info('Invalid Request','Info');
+        navigate('/accounts/login');
+      }
+  },[])
+
+  const onSubmit = methods.handleSubmit(async (data) => {
+    const payload = {
+        email: params.email,
+        token: params.token,
+        password: data.password
+    };
+    await axiosInstance.post("accounts/change-password", {
+        ...payload,
+      }).then(() => {
+        toast.success('Password has been reset.','Success');
+        navigate('/accounts/login');
+      });
   })
 
   return (
@@ -33,31 +61,25 @@ function ChangePasswordPage() {
                     <div className="header position-absolute">
                         <div className="logo">
                             <a>
-                                <img src="src/assets/images/office-logo.png"/>
+                                <img src="/src/assets/images/office-logo.png"/>
                             </a>
                         </div>
                     </div>
                     <div className="auth-form">
                         <div className="form-head">
-                            <h1 className="heading">Password Change</h1>
+                            <h1 className="heading">Hi, {params.firstName} {params.lastName}</h1>
+                            <p>Create new password</p>
                         </div>
                         <FormProvider {...methods}>
                         <form onSubmit={onSubmit} autoComplete="off">
-                            <div className="mb-3">
-                                <label htmlFor="email" className="form-label">New Password
-                                    <span className="text-danger">*</span></label>
-                                    <InputComponent {...CHANGE_PASSWORD_FORM_FIELD[0]} />
-                            </div>
-
-                            <div className="mb-3">
-                                <label htmlFor="password" className="form-label">Confirm New Password
-                                    <span className="text-danger">*</span></label>
-                                <div className="input-password position-relative">
-                                    <InputComponent {...CHANGE_PASSWORD_FORM_FIELD[1]} />
-                                </div>
-                            </div>
-                            
-                            <ButtonComponent btnName="Submit" className="btn btn-primary" btnType="submit" isDisabled={false}></ButtonComponent>
+                            {
+                                CHANGE_PASSWORD_FORM_FIELD && 
+                                
+                                    CHANGE_PASSWORD_FORM_FIELD.map(field => 
+                                        <InputComponent {...field} />
+                                    )
+                            }
+                            <ButtonComponent btnName="Submit" className="btn btn-primary" btnType="submit" isDisabled={methods.formState.isSubmitting} isLoading={methods.formState.isSubmitting}></ButtonComponent>
                         
                         </form>
                         </FormProvider>
