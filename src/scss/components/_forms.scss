@@ -23,3 +23,13 @@ form {
         }
     }
 }
+.security-verification-code input{
+    border: rem(1) solid $secondary;
+    height: rem(50);
+    width: rem(50);
+    line-height: rem(50);
+    text-align: center;
+    margin-right: rem(5);
+    border-radius: rem(3);
+    background: $light-200;
+}

@@ -94,10 +94,11 @@ function ConfirmSecurityCodePage() {
                      
 
                         <FormProvider {...methods}>
-                        <form onSubmit={onSubmit} autoComplete="off">
+                        <form onSubmit={onSubmit} autoComplete="off" className="security-verification-code">                      
                             <div className="mb-3">
                                 <label htmlFor="email" className="form-label">Verification Code
                                     <span className="text-danger">*</span></label>
+                                    <br></br>
                                     {/* <InputComponent {...CONFIM_SECURITY_CODE_FORM_FIELD[0]} /> */}
                                     {inputValues.map((value, index) => (
                                     <input
@@ -109,7 +110,7 @@ function ConfirmSecurityCodePage() {
                                         onKeyDown={(event) => handleKeyDown(index, event)}
                                         onPaste={handlePaste} 
                                         ref={(inputRef) => (inputRefs.current[index] = inputRef!)}
-                                        style={{ width: '30px', marginRight: '5px' }}
+                                       
                                     />
                                     ))}
                             </div>
