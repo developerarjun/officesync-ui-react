@@ -1,11 +1,11 @@
-import Axios from "axios";
-import setAxiosHeader from "./cache.interceptor";
-import { environment } from "../../../../environments/environment";
-import { ResponseStatus } from "../enum/ResponseStatus";
-import { toast } from "../../components/alert";
+import Axios from 'axios';
+import setAxiosHeader from './cache.interceptor';
+import { environment } from '../../../../environments/environment';
+import { ResponseStatus } from '../enum/ResponseStatus';
+import { toast } from '../../components/alert';
 
 const axiosInstance = Axios.create({
-  baseURL: environment.apiUrl,
+  baseURL: environment.apiUrl
 });
 
 axiosInstance.interceptors.request.use(
@@ -79,7 +79,7 @@ const handleAuthError = (err: any) => {
     case ResponseStatus.BadRequest:
       break;
     default:
-      toast.error("Something went wrong!", "Error");
+      toast.error('Something went wrong!', 'Error');
   }
   console.log(err);
 };
