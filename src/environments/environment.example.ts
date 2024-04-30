@@ -1,6 +1,6 @@
 export const environment = {
-    projectName: '',
-    apiUrl: '',
-    apiVersion: '',
-    production: false,
+  projectName: '',
+  apiUrl: '',
+  apiVersion: '',
+  production: false
 };

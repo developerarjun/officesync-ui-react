@@ -1,11 +1,11 @@
-import Axios from "axios";
-import setAxiosHeader from "./cache.interceptor";
-import { environment } from "../../../../environments/environment";
-import { ResponseStatus } from "../enum/ResponseStatus";
-import { toast } from "../../components/alert";
+import Axios from 'axios';
+import setAxiosHeader from './cache.interceptor';
+import { environment } from '../../../../environments/environment';
+import { ResponseStatus } from '../enum/ResponseStatus';
+import { toast } from '../../components/alert';
 
 const axiosInstance = Axios.create({
-  baseURL: environment.apiUrl,
+  baseURL: environment.apiUrl
 });
 
 axiosInstance.interceptors.request.use(
@@ -16,7 +16,7 @@ axiosInstance.interceptors.request.use(
 );
 
 axiosInstance.interceptors.response.use(
-  (response) =>  Promise.resolve(response.data),
+  (response) => Promise.resolve(response.data),
   async (error) => {
     handleAuthError(error);
     // if (error.response && error.response.status === 401) {
@@ -74,15 +74,14 @@ axiosInstance.interceptors.response.use(
   }
 );
 
-
-const handleAuthError =(err: any) => {
-  switch(err.response?.status){
+const handleAuthError = (err: any) => {
+  switch (err.response?.status) {
     case ResponseStatus.BadRequest:
       break;
     default:
-      toast.error('Something went wrong!','Error');
+      toast.error('Something went wrong!', 'Error');
   }
   console.log(err);
-}
+};
 
 export default axiosInstance;

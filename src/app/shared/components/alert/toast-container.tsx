@@ -1,7 +1,7 @@
-import { memo, useCallback, useEffect, useState } from "react";
-import { Toast } from "./toast";
-import type { ToastContainerProps, ToastDetail } from ".";
-import "./index.scss";
+import { memo, useCallback, useEffect, useState } from 'react';
+import { Toast } from './toast';
+import type { ToastContainerProps, ToastDetail } from '.';
+import './index.scss';
 
 export const ToastContainer = memo(({ containerStyle, ...defaultOptions }: ToastContainerProps) => {
   const [toasts, setToasts] = useState<ToastDetail[]>([]);
@@ -12,7 +12,10 @@ export const ToastContainer = memo(({ containerStyle, ...defaultOptions }: Toast
 
   const handler = useCallback(({ detail }: CustomEvent<ToastDetail>) => {
     if (detail.options) {
-      setToasts((prevToasts) => [...prevToasts, { ...detail, options: { ...defaultOptions, ...detail.options } }]);
+      setToasts((prevToasts) => [
+        ...prevToasts,
+        { ...detail, options: { ...defaultOptions, ...detail.options } }
+      ]);
       return;
     }
 
@@ -20,31 +23,28 @@ export const ToastContainer = memo(({ containerStyle, ...defaultOptions }: Toast
   }, []);
 
   useEffect(() => {
-    window.addEventListener("toastAlert", handler as any);
+    window.addEventListener('toastAlert', handler as any);
 
     return () => {
-      window.removeEventListener("toastAlert", handler as any);
+      window.removeEventListener('toastAlert', handler as any);
     };
   }, []);
 
   return (
     <>
-    {
-      toasts.length ?
-      <div className="overlay-container" aria-live="polite">    
-    <div id="toast-container" className="toast-top-right toast-container">
-        <div id="toast-container" className="toast-top-right toast-container">
+      {toasts.length ? (
+        <div className="overlay-container" aria-live="polite">
+          <div id="toast-container" className="toast-top-right toast-container">
+            <div id="toast-container" className="toast-top-right toast-container">
               {toasts.map((toast) => (
                 <Toast key={toast.id} remove={removeToast} {...toast} />
               ))}
-           
+            </div>
+          </div>
         </div>
-
-    
-    </div>
-    </div> : <></>
-    }
-    
+      ) : (
+        <></>
+      )}
     </>
   );
 });
