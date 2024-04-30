@@ -1,129 +1,93 @@
-import { FormProvider, useForm } from "react-hook-form";
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import React, { useState, useRef } from 'react';
-import AuthContentComponent from "../ui/auth-content.component";
-import ButtonComponent from "../../../shared/components/button/ButtonComponent";
+import { FormProvider, useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
+import React from 'react';
+import AuthContentComponent from '../ui/auth-content.component';
+import ButtonComponent from '../../../shared/components/button/ButtonComponent';
+import OTPInput from '../../../shared/components/otp-input/otp-input';
 
 function ConfirmSecurityCodePage() {
   const methods = useForm();
   const navigate = useNavigate();
+  const [{ otp, numInputs, placeholder, inputType }, setConfig] = React.useState({
+    otp: '',
+    numInputs: 6,
+    minLength: 0,
+    maxLength: 40,
+    placeholder: '',
+    inputType: 'number' as const
+  });
 
-  const [inputValues, setInputValues] = useState(['', '', '', '', '', '']);
-  const inputRefs = useRef<HTMLInputElement[]>(Array(6).fill(null));
-
-  
-
-  useEffect(() => {
-    // Focus on the first input field when the component mounts
-    inputRefs.current[0].focus();
-  }, []); 
-
-  const handleChange = (index: number, event: React.ChangeEvent<HTMLInputElement>) => {
-    const { value } = event.target;
-    const newInputValues = [...inputValues];
-    newInputValues[index] = value;
-    setInputValues(newInputValues);
-    if (value && index < 5) {
-      inputRefs.current[index + 1].focus();
-    }
+  const handleOTPChange = (otp: string) => {
+    setConfig((prevConfig) => ({ ...prevConfig, otp }));
   };
-
-  const handlePaste = (event: React.ClipboardEvent<HTMLInputElement>)  => {
-    event.preventDefault();
-    const pasteData = event.clipboardData.getData('text');
-    const pasteDigits = pasteData.split('').slice(0, 6);
-    const newInputValues = [...inputValues];
-    pasteDigits.forEach((digit, index) => {
-      newInputValues[index] = digit;
-    });
-    setInputValues(newInputValues);
-    inputRefs.current[5].focus();
-  };
-
-  const handleKeyDown = (index: number, event: React.KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === 'Backspace' && !inputValues[index] && index > 0) {
-      setInputValues(prevValues => {
-        const newValues = [...prevValues];
-        newValues[index - 1] = '';
-        return newValues;
-      });
-      inputRefs.current[index - 1].focus();
-    }
-  };
-
- 
-//handle submit
-  const onSubmit = methods.handleSubmit(data => {
-    console.log(data);
-    methods.reset();
-  })
 
   return (
     <section className="authentication">
-       <div className="container-fluid">
+      <div className="container-fluid">
         <div className="row d-flex flex-wrap">
-        <div className="banner-wrap">
-                <AuthContentComponent 
-                    className="auth-banner d-flex flex-wrap align-items-end welcome-banner"
-                    bannerHeader="Welcome Back!"
-                    bannerDesc="
-                        Enjoy a seamless experience tailored just for you. Your journey continues – simply sign in to pick up where you left off. Let\'s make every interaction effortless and secure.
-                    "></AuthContentComponent>
+          <div className="banner-wrap">
+            <AuthContentComponent
+              className="auth-banner d-flex flex-wrap align-items-end welcome-banner"
+              bannerHeader="Confirmation Code Entry"
+              bannerDesc="Secure your account by entering the 6-digit code. Complete the process to finalize your account creation and enjoy a worry-free experience."
+            ></AuthContentComponent>
           </div>
           <div className="auth-form form-pwd-change">
-                <div
-                    className="auth-section d-flex flex-wrap height-full flex-column justify-content-center position-relative"
-                >
-                    <div className="header position-absolute">
-                        <div className="logo">
-                            <a>
-                                <img src="src/assets/images/office-logo.png"/>
-                            </a>
-                        </div>
-                    </div>
-                    <div className="auth-form">
-                        <div className="form-head">
-                            <h1 className="heading">Verification</h1>
-                            <small className="dark">Please complete the following procedure to verify your account.</small>
-                        </div>
-                       <div className="form-sub-heading mb-4">
-                            <h3>An email has been sent to you</h3>
-                            <small>Please enter the 6-digit code that has been sent to your associated email.</small>
-                       </div>
-                     
-
-                        <FormProvider {...methods}>
-                        <form onSubmit={onSubmit} autoComplete="off" className="security-verification-code">                      
-                            <div className="mb-3">
-                                <label htmlFor="email" className="form-label">Verification Code
-                                    <span className="text-danger">*</span></label>
-                                    <br></br>
-                                    {/* <InputComponent {...CONFIM_SECURITY_CODE_FORM_FIELD[0]} /> */}
-                                    {inputValues.map((value, index) => (
-                                    <input
-                                        key={index}
-                                        type="text"
-                                        maxLength={1}
-                                        value={value}
-                                        onChange={(event) => handleChange(index, event)}
-                                        onKeyDown={(event) => handleKeyDown(index, event)}
-                                        onPaste={handlePaste} 
-                                        ref={(inputRef) => (inputRefs.current[index] = inputRef!)}
-                                       
-                                    />
-                                    ))}
-                            </div>
-                            <ButtonComponent btnName="Go Back" className="btn btn-primary" btnType="submit" isDisabled={false}></ButtonComponent>
-                            <ButtonComponent btnName="Verify Account" className="btn btn-primary mx-3" btnType="submit" isDisabled={false}></ButtonComponent>
-                            
-                        </form>
-                        </FormProvider>
-                    </div>
+            <div className="auth-section d-flex flex-wrap height-full flex-column justify-content-center position-relative">
+              <div className="header position-absolute">
+                <div className="logo">
+                  <a>
+                    <img src="/src/assets/images/office-logo.png" />
+                  </a>
                 </div>
+              </div>
+              <div className="auth-form">
+                <div className="form-head">
+                  <h1 className="heading">Verification</h1>
+                  <p>Please enter the 6-digit code that has been sent to your associated email.</p>
+                </div>
+                <FormProvider {...methods}>
+                  <form autoComplete="off">
+                    <div className="mb-3 d-flex flex-nowrap gap-2 flex-row justify-content-between">
+                      <OTPInput
+                        inputStyle="inputStyle"
+                        numInputs={numInputs}
+                        onChange={handleOTPChange}
+                        value={otp}
+                        placeholder={placeholder}
+                        inputType={inputType}
+                        renderInput={(props) => (
+                          <input {...props} className="form-control seurity-code" />
+                        )}
+                        shouldAutoFocus
+                      />
+                    </div>
+
+                    <div className="error__div error">
+                      <small className="error__text">Invalid Code</small>
+                    </div>
+                    <div className="mt-4">
+                      <label>
+                        Didn't got Code?
+                        <a className="light-bold ms-2" onClick={() => navigate('/accounts/login')}>
+                          Resend
+                        </a>
+                      </label>
+                    </div>
+                    <ButtonComponent
+                      btnName="Verify"
+                      className="btn btn-full btn-primary mb-5"
+                      btnType="submit"
+                      isDisabled={methods.formState.isSubmitting}
+                      isLoading={methods.formState.isSubmitting}
+                    ></ButtonComponent>
+                  </form>
+                </FormProvider>
+              </div>
             </div>
+          </div>
         </div>
-       </div>
+      </div>
     </section>
   );
 }

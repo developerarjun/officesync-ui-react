@@ -1,23 +1,24 @@
-import { FormProvider, useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
-import { LOGIN_FORM_FIELD } from "./data-access/models/login-input.model";
-import InputComponent from "../../../shared/components/input/input.component";
-import AuthContentComponent from "../ui/auth-content.component";
-import ButtonComponent from "../../../shared/components/button/ButtonComponent";
-import axiosInstance from "../../../shared/utils/interceptors/token.interceptor";
+import { FormProvider, useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
+import { LOGIN_FORM_FIELD } from './data-access/models/login-input.model';
+import InputComponent from '../../../shared/components/input/input.component';
+import AuthContentComponent from '../ui/auth-content.component';
+import ButtonComponent from '../../../shared/components/button/ButtonComponent';
+import axiosInstance from '../../../shared/utils/interceptors/token.interceptor';
 
 function LoginPage() {
   const methods = useForm();
   const navigate = useNavigate();
 
   const onSubmit = methods.handleSubmit(async (data) => {
-    await axiosInstance.post("accounts/request-change-password", {
-      ...data,
-    }).then(() => {
-      navigate('/dashboard');
-    });
-});
-
+    await axiosInstance
+      .post('accounts/request-change-password', {
+        ...data
+      })
+      .then(() => {
+        navigate('/dashboard');
+      });
+  });
 
   return (
     <section className="authentication">
@@ -47,16 +48,12 @@ function LoginPage() {
                 </div>
                 <FormProvider {...methods}>
                   <form onSubmit={onSubmit} autoComplete="off">
-                  {
-                      LOGIN_FORM_FIELD && 
-                          LOGIN_FORM_FIELD.map(field => 
-                              <InputComponent {...field} />
-                          )
-                    }
+                    {LOGIN_FORM_FIELD &&
+                      LOGIN_FORM_FIELD.map((field) => <InputComponent {...field} />)}
                     <div className="mb-3">
                       <div className="form-check d-flex flex-wrap justify-content-between">
                         <div className="forgot-password">
-                          <a onClick={() => navigate("/accounts/forgot-password")}>
+                          <a onClick={() => navigate('/accounts/forgot-password')}>
                             Forgot Password
                           </a>
                         </div>
