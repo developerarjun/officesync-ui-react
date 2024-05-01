@@ -1,6 +1,7 @@
 import AuthLayout from '../layout/auth-layout/auth-layout';
 import ChangePasswordPage from '../modules/auth/confirm-password/ChangePasswordPage';
 import ConfirmSecurityCodePage from '../modules/auth/confirm-security-code/ConfirmSecurityCodePage';
+import DashboardRawPage from '../modules/auth/dashboard-raw/DashboardRawPage';
 import ForgotPasswordPage from '../modules/auth/forgot-password/ForgotPasswordPage';
 import LoginPage from '../modules/auth/login/LoginPage';
 
@@ -48,6 +49,14 @@ export const routes: RouteConfigInterface[] = [
         title: 'Confirm Security Code',
         component: ConfirmSecurityCodePage,
         path: 'accounts/confirm-security-code',
+        isPublic: true,
+        isAuthorized: false
+      },
+      {
+        name: 'dashboardraw',
+        title: 'Dashboard Raw Design',
+        component: DashboardRawPage,
+        path: 'dashboard-raw',
         isPublic: true,
         isAuthorized: false
       }
