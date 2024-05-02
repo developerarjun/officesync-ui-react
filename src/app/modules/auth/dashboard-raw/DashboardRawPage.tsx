@@ -369,6 +369,50 @@ function DashboardRawPage() {
                                     </table>
                                 </div>
                             </div>
+                            <div className="table-layout-data">
+                                <div className="table-title mt-10">
+                                    <p>Monitor</p>
+                                    <span>Total 24</span>
+                                </div>
+                                <div className="table-content mt-10">
+                                    <table>
+                                        <thead className="table-head">
+                                            <th>ID</th>
+                                            <th>Brand</th>
+                                            <th>Model no.</th>
+                                            <th>Serial no.</th>
+                                            <th>Vendor</th>
+                                            <th>Quantity</th>
+                                        </thead>
+                                        <tbody>
+                                           <tr>
+                                            <td>1</td>
+                                            <td>abc brand</td>
+                                            <td>ABx123sasa</td>
+                                            <td>158YTYTY585</td>
+                                            <td>xya Vendor</td>
+                                            <td>1</td>
+                                           </tr>
+                                           <tr>
+                                            <td>1</td>
+                                            <td>abc brand</td>
+                                            <td>ABx123sasa</td>
+                                            <td>158YTYTY585</td>
+                                            <td>xya Vendor</td>
+                                            <td>1</td>
+                                           </tr>
+                                           <tr>
+                                            <td>1</td>
+                                            <td>abc brand</td>
+                                            <td>ABx123sasa</td>
+                                            <td>158YTYTY585</td>
+                                            <td>xya Vendor</td>
+                                            <td>1</td>
+                                           </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                                 </div>
                             </div>
                         </div>
