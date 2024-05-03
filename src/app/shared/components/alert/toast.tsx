@@ -1,6 +1,7 @@
 import { memo, useEffect } from 'react';
 import Icon from './icon';
 import type { ToastProps } from '.';
+import CloseButtonIcon from './close-icon';
 
 export const Toast = memo(({ remove, id, message, title, type, options }: ToastProps) => {
   useEffect(() => {
@@ -12,7 +13,7 @@ export const Toast = memo(({ remove, id, message, title, type, options }: ToastP
       <button
         type="button"
         aria-label="Close"
-        className="toast-close-button"
+        className={`toast-close-button ${CloseButtonIcon(type)}`}
         onClick={() => remove(id)}
       >
         <span aria-hidden="true">×</span>
