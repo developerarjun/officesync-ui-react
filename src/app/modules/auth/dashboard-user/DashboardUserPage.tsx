@@ -1,7 +1,7 @@
 import React from 'react';
 import '../dashboard-raw/dashboard-raw.css'
 import {useNavigate } from 'react-router-dom';
-function DashboardRawPage() {
+function DashboardUserPage() {
     const navigate=useNavigate();
     return (
         <>
@@ -244,7 +244,7 @@ function DashboardRawPage() {
                         <div className="main-content">
                             <div className="main-content-wrapper ">
                                 <div className="page-title">
-                                    <h3>Inventory and Device</h3>
+                                    <h3>Available Users</h3>
                                 </div>
     
                                 {/* Search and Filter */}
@@ -252,7 +252,7 @@ function DashboardRawPage() {
                             <div className="device-type">
                                 <div className="form">                                   
                                         <select name="" className="form-control" id="">
-                                            <option value="">Device Type</option>
+                                            <option value="">User Type</option>
                                         </select>                                    
                                 </div>
                             </div>
@@ -263,166 +263,73 @@ function DashboardRawPage() {
                                 </div>
                             </div>
                         </div>
+                        <div className="add-button">
+                            <button className='btn btn-primary btn-sm mt-4'>+ Add User</button>
+                        </div>
     
-                                {/* Suggested layout */}
-                                <div className="suggested-layout-wrapper mtb-30">
-                                <p className="suggested-text">Suggested</p>
-                                <div className="inner-items">
-                                    <ul>                                  
-
-                                        <li className="active">Inventory</li>
-                                        <li className="norm">Device</li>
-                                        
-                                    </ul>
-                                </div>
-                                <div className="add-device">
-                                    <a href="">Add Device</a>
-                                </div>
-                                </div>
+                    
     
                                 {/* Table Section */}
                                 <div className="table-layout-wrapper mt-40">
                                 <div className="table-layout-data">
-                                <div className="table-title mt-10">
-                                    <p>Laptop</p>
-                                    <span>Total 24</span>
-                                </div>
+                              
                                 <div className="table-content mt-10">
                                     <table>
                                         <thead className="table-head">
                                             <th>ID</th>
-                                            <th>Brand</th>
-                                            <th>Model no.</th>
-                                            <th>Serial no.</th>
-                                            <th>Vendor</th>
-                                            <th>Quantity</th>
+                                            <th>UserName</th>
+                                            <th>Email</th>
+                                            <th>Joined On</th>
+                                            <th>Role</th>
+                                            <th>Status</th>
                                         </thead>
                                         <tbody>
                                            <tr>
                                             <td>1</td>
-                                            <td>abc brand</td>
-                                            <td>ABx123sasa</td>
-                                            <td>158YTYTY585</td>
-                                            <td>xya Vendor</td>
-                                            <td>1</td>
+                                            <td>Sandesh Thapa</td>
+                                            <td>sandeshthapa5907@gmail.com</td>
+                                            <td>2024/03/23</td>
+                                            <td>SuperUser</td>
+                                            <td>Active</td>
                                            </tr>
                                            <tr>
                                             <td>1</td>
-                                            <td>abc brand</td>
-                                            <td>ABx123sasa</td>
-                                            <td>158YTYTY585</td>
-                                            <td>xya Vendor</td>
+                                            <td>Sandesh Thapa</td>
+                                            <td>sandeshthapa5907@gmail.com</td>
+                                            <td>2024/03/23</td>
+                                            <td>SuperUser</td>
+                                            <td>Active</td>
+                                           </tr> <tr>
                                             <td>1</td>
-                                           </tr>
-                                           <tr>
-                                            <td>1</td>
-                                            <td>abc brand</td>
-                                            <td>ABx123sasa</td>
-                                            <td>158YTYTY585</td>
-                                            <td>xya Vendor</td>
-                                            <td>1</td>
-                                           </tr>
-                                           <tr>
-                                            <td>1</td>
-                                            <td>abc brand</td>
-                                            <td>ABx123sasa</td>
-                                            <td>158YTYTY585</td>
-                                            <td>xya Vendor</td>
-                                            <td>1</td>
+                                            <td>Sandesh Thapa</td>
+                                            <td>sandeshthapa5907@gmail.com</td>
+                                            <td>2024/03/23</td>
+                                            <td>SuperUser</td>
+                                            <td>Active</td>
                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
-                            <div className="table-layout-data">
-                                <div className="table-title mt-10">
-                                    <p>Monitor</p>
-                                    <span>Total 24</span>
+                    
+                         
                                 </div>
-                                <div className="table-content mt-10">
-                                    <table>
-                                        <thead className="table-head">
-                                            <th>ID</th>
-                                            <th>Brand</th>
-                                            <th>Model no.</th>
-                                            <th>Serial no.</th>
-                                            <th>Vendor</th>
-                                            <th>Quantity</th>
-                                        </thead>
-                                        <tbody>
-                                           <tr>
-                                            <td>1</td>
-                                            <td>abc brand</td>
-                                            <td>ABx123sasa</td>
-                                            <td>158YTYTY585</td>
-                                            <td>xya Vendor</td>
-                                            <td>1</td>
-                                           </tr>
-                                           <tr>
-                                            <td>1</td>
-                                            <td>abc brand</td>
-                                            <td>ABx123sasa</td>
-                                            <td>158YTYTY585</td>
-                                            <td>xya Vendor</td>
-                                            <td>1</td>
-                                           </tr>
-                                           <tr>
-                                            <td>1</td>
-                                            <td>abc brand</td>
-                                            <td>ABx123sasa</td>
-                                            <td>158YTYTY585</td>
-                                            <td>xya Vendor</td>
-                                            <td>1</td>
-                                           </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+
+                                {/* Pagination starts */}
+                                <div className="pagination-container">
+                            <ul className="pagination">
+                            <li className="page-item"><a href="#" className="page-link pagination-arrow">ᐸ</a></li>
+
+                                <li className="page-item"><a href="#" className="page-link">1</a></li>
+                                <li className="page-item"><a href="#" className="page-link active">2</a></li>
+                                <li className="page-item"><a href="#" className="page-link">3</a></li>
+                                <li className="page-item"><a href="#" className="page-link">...</a></li>
+                                <li className="page-item"><a href="#" className="page-link">5</a></li>
+                                <li className="page-item"><a href="#" className="page-link pagination-arrow">ᐳ</a></li>
+
+                            
+                            </ul>
                             </div>
-                            <div className="table-layout-data">
-                                <div className="table-title mt-10">
-                                    <p>Monitor</p>
-                                    <span>Total 24</span>
-                                </div>
-                                <div className="table-content mt-10">
-                                    <table>
-                                        <thead className="table-head">
-                                            <th>ID</th>
-                                            <th>Brand</th>
-                                            <th>Model no.</th>
-                                            <th>Serial no.</th>
-                                            <th>Vendor</th>
-                                            <th>Quantity</th>
-                                        </thead>
-                                        <tbody>
-                                           <tr>
-                                            <td>1</td>
-                                            <td>abc brand</td>
-                                            <td>ABx123sasa</td>
-                                            <td>158YTYTY585</td>
-                                            <td>xya Vendor</td>
-                                            <td>1</td>
-                                           </tr>
-                                           <tr>
-                                            <td>1</td>
-                                            <td>abc brand</td>
-                                            <td>ABx123sasa</td>
-                                            <td>158YTYTY585</td>
-                                            <td>xya Vendor</td>
-                                            <td>1</td>
-                                           </tr>
-                                           <tr>
-                                            <td>1</td>
-                                            <td>abc brand</td>
-                                            <td>ABx123sasa</td>
-                                            <td>158YTYTY585</td>
-                                            <td>xya Vendor</td>
-                                            <td>1</td>
-                                           </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -433,4 +340,4 @@ function DashboardRawPage() {
     );
 }
 
-export default DashboardRawPage;
+export default DashboardUserPage;
