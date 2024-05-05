@@ -22,26 +22,59 @@ function LoginPage() {
 
   return (
     <section className="authentication">
-      <div className="container-fluid">
-        <div className="row d-flex flex-wrap">
-          <div className="banner-wrap">
+      <div >
+        <div className="d-flex flex-md-row flex-column">
+          <div >
             <AuthContentComponent
-              className="auth-banner d-flex flex-wrap align-items-end welcome-banner"
+              className="auth-banner d-flex flex-wrap align-items-end welcome-banner lh-base"
               bannerHeader="Welcome Back!"
               bannerDesc="
-                        Enjoy a seamless experience tailored just for you. Your journey continues – simply sign in to pick up where you left off. Let\'s make every interaction effortless and secure.
+                        Enjoy a seamless experience tailored just for you. Your journey continues – simply sign in to pick up where you left off. Let's make every interaction effortless and secure.
                     "
             ></AuthContentComponent>
           </div>
-          <div className="auth-form form-pwd-change">
+          {/* <div className="auth-form form-pwd-change">
             <div className="auth-section d-flex flex-wrap height-full flex-column justify-content-center position-relative">
-              <div className="header position-absolute">
-                <div className="logo">
+              <div className="logo header position-absolute">
                   <a>
                     <img src="/src/assets/images/office-logo.png" />
                   </a>
                 </div>
+              <div className="auth-form">
+                <div className="form-head">
+                  <h1 className="heading">Sign In</h1>
+                </div>
+                <FormProvider {...methods}>
+                  <form onSubmit={onSubmit} autoComplete="off">
+                    {LOGIN_FORM_FIELD &&
+                      LOGIN_FORM_FIELD.map((field) => <InputComponent {...field} />)}
+                    <div className="mb-3">
+                      <div className="form-check d-flex flex-wrap justify-content-between">
+                        <div className="forgot-password">
+                          <a onClick={() => navigate('/accounts/forgot-password')}>
+                            Forgot Password
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <ButtonComponent
+                      btnName="Login"
+                      className="btn btn-primary"
+                      btnType="submit"
+                      isDisabled={false}
+                    ></ButtonComponent>
+                  </form>
+                </FormProvider>
               </div>
+            </div>
+          </div> */}
+          <div className="pe-md-5">
+            <div className="auth-section display-flex height-full flex-column justify-content-center position-relative auth-form form-pwd-change">
+              <div className="logo header position-absolute">
+                  <a>
+                    <img src="/src/assets/images/office-logo.png" />
+                  </a>
+                </div>
               <div className="auth-form">
                 <div className="form-head">
                   <h1 className="heading">Sign In</h1>
