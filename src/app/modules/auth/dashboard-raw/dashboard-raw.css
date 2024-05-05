@@ -78,12 +78,21 @@ ul li {
 	flex-flow: row wrap;
 	height: 100vh;
 }
-
+.ponter-cursor{
+	cursor: pointer;
+}
 /* navbar css*/
 /* navbar css*/
 .nav-bar {
 	background: #f5f5f5;
 	border-bottom: 1px solid rgb(0, 0, 0, 0.3);
+}
+.sticky-navbar{
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 1000; /* Adjust the z-index as needed */
+	background-color: #ffffff; /* Change the background color if needed */
 }
 
 .navbar-wrap {
@@ -165,6 +174,9 @@ ul li {
 .dashboard-inner-wrapper .main-content {
 	width: 80%;
 }
+.dashboard-content {
+    padding-top: 63px;
+}
 
 /* .sidebar-content{
 	padding: 10px 20px;
@@ -181,6 +193,16 @@ ul li {
 	background: #EDF7FF;
 	padding: 15px 30px;
 }
+.title-flex{
+	display: flex;
+	justify-content: space-between;
+
+}
+.title-flex img{
+	width: 10px;
+	height: 10px;
+}
+
 
 .sidebar-title h4 {
 	font-weight: 600;
