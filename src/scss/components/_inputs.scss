@@ -1,13 +1,10 @@
 input {
     &.form-control {
         box-sizing: border-box;
-        padding: rem(8 32 8 16);
-        width: 100%;
-        height: rem(42);
+        width:70%;
         background: $light;
         border: 1px solid $light-300;
         border-radius: 0;
-        margin: 0;
         &:focus {
             outline: none;
             box-shadow: none;
