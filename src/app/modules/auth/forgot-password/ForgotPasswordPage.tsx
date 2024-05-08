@@ -26,31 +26,67 @@ function ForgotPasswordPage() {
   });
 
   return (
-    <section className="authentication">
-      <div>
-        <div className="d-flex flex-md-row flex-column">
-          <div>
-            <AuthContentComponent
-              className="auth-banner d-flex flex-wrap align-items-end welcome-banner lh-base"
-              bannerHeader="Welcome Back!"
-              bannerDesc="
-                        Enjoy a seamless experience tailored just for you. Your journey continues – simply sign in to pick up where you left off. Let's make every interaction effortless and secure.
-                    "
-            ></AuthContentComponent>
+    // <section className="authentication">
+    //   <div>
+    //     <div className="d-flex flex-md-row flex-column">
+    //         <AuthContentComponent
+    //           className="auth-banner d-flex flex-wrap align-items-end welcome-banner lh-base"
+    //           bannerHeader="Welcome Back!"
+    //           bannerDesc="
+    //                     Enjoy a seamless experience tailored just for you. Your journey continues – simply sign in to pick up where you left off. Let's make every interaction effortless and secure."
+    //         />
+    //         <div  className="auth-section d-flex height-full flex-column justify-content-center position-relative auth-form form-pwd-change">
+    //           <div className="header position-absolute">
+    //               <a>
+    //                 <img src="/src/assets/images/office-logo.png" />
+    //               </a>
+    //           </div>
+    //           <div className="auth-form">
+    //             <div className="form-head">
+    //               <h1 className="heading">Forget Password?</h1>
+    //               <p>Please enter your email</p>
+    //             </div>
+                // <FormProvider {...methods}>
+                //   <form onSubmit={onSubmit} autoComplete="off">
+                //     <InputComponent {...FORGET_PASSSWORD_FORM_FIELD} />
+
+                //     <div className="mb-3">
+                //       <div className="form-check d-flex flex-wrap justify-content-between">
+                //         <div className="forgot-password">
+                //           <a onClick={() => navigate('/accounts/login')}>Go Back</a>
+                //         </div>
+                //       </div>
+                //     </div>
+                //     <ButtonComponent
+                //       btnName="Submit"
+                //       className="btn btn-primary"
+                //       btnType="submit"
+                //       isDisabled={methods.formState.isSubmitting}
+                //       isLoading={methods.formState.isSubmitting}
+                //     ></ButtonComponent>
+                //   </form>
+                // </FormProvider>
+    //           </div>
+    //         </div>
+    //       </div>
+    //     </div>
+    // </section>
+    <section>
+      <div  className='d-flex flex-md-row flex-column'>
+        <div className='w-100'>
+          <AuthContentComponent 
+          className="auth-banner welcome-banner d-flex flex-wrap align-items-end"
+          bannerHeader="Welcome Back!"
+          bannerDesc="Enjoy a seamless experience tailored just for you. Your journey continues – simply sign in to pick up where you left off. Let's make every interaction effortless and secure."
+          />
+        </div>
+        <div className='d-flex flex-column p-5 w-md-50 w-100'>
+          <div className='mb-5'>
+          <img src="/src/assets/images/office-logo.png" />
           </div>
-          <div >
-            <div className="auth-section d-flex height-full flex-column justify-content-center position-relative auth-form form-pwd-change">
-              <div className="header position-absolute">
-                  <a>
-                    <img src="/src/assets/images/office-logo.png" />
-                  </a>
-                </div>
-              <div className="auth-form">
-                <div className="form-head">
-                  <h1 className="heading">Forget Password?</h1>
-                  <p>Please enter your email</p>
-                </div>
-                <FormProvider {...methods}>
+          <h2 className="heading mb-3">Forgot Password?</h2>
+          <p>Please enter your email</p>
+          <FormProvider {...methods}>
                   <form onSubmit={onSubmit} autoComplete="off">
                     <InputComponent {...FORGET_PASSSWORD_FORM_FIELD} />
 
@@ -70,9 +106,6 @@ function ForgotPasswordPage() {
                     ></ButtonComponent>
                   </form>
                 </FormProvider>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
