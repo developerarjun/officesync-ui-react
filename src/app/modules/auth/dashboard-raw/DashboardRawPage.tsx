@@ -15,7 +15,11 @@ function DashboardRawPage() {
         {
             title: 'Project Management',
             items: ['Project', 'Time Tracker', 'Calendar']
-        }
+        },
+        {
+            title: 'Inventory Management',
+            items: ['Sales', 'Stock', 'Purchase']
+        },
     ];
     return (
         <>
