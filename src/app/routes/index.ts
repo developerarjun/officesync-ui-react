@@ -62,8 +62,8 @@ export const routes: RouteConfigInterface[] = [
         isAuthorized: false
       },
       {
-        name: 'dashboarduser',
-        title: 'Dashboard User Design',
+        name: 'dashboardUserPage',
+        title: 'Dashboard User Page',
         component: DashboardUserPage,
         path: 'dashboard-user',
         isPublic: true,
