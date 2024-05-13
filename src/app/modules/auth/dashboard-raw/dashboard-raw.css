@@ -103,14 +103,6 @@ ul li {
 
 .navbar-logo img {
 	max-width: 150px;
-	/* Maximum width of 200 pixels */
-	height: auto;
-	/* Maintain aspect ratio */
-	margin-top: 2px;
-}
-
-.nav-bar-item-left {
-	width: 20%;
 }
 
 .nav-bar-item-mid {
@@ -134,12 +126,6 @@ ul li {
 
 .nav-bar-item-mid .nav-items .active {
 	color: #0672CB;
-}
-
-.nav-bar-item-right .profile ul li {
-	display: inline-block;
-	margin-right: 20px;
-
 }
 
 .nav-bar-item-right .profile {
@@ -168,7 +154,6 @@ ul li {
 
 .dashboard-inner-wrapper .sidebar {
 	width: 20%;
-	/* padding: 10px 20px; */
 }
 
 .dashboard-inner-wrapper .main-content {
@@ -178,9 +163,6 @@ ul li {
     padding-top: 63px;
 }
 
-/* .sidebar-content{
-	padding: 10px 20px;
-} */
 .sidebar {
 	border-right: 1px solid rgba(0, 0, 0, 0.3);
 	box-sizing: border-box;
