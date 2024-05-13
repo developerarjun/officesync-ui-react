@@ -27,26 +27,24 @@ function ForgotPasswordPage() {
 
   return (
     <section className="authentication">
-      <div className="container-fluid">
-        <div className="row d-flex flex-wrap">
-          <div className="banner-wrap">
+      <div>
+        <div className="d-flex flex-md-row flex-column">
+          <div>
             <AuthContentComponent
-              className="auth-banner d-flex flex-wrap align-items-end welcome-banner"
+              className="auth-banner d-flex flex-wrap align-items-end welcome-banner lh-base"
               bannerHeader="Welcome Back!"
               bannerDesc="
-                        Enjoy a seamless experience tailored just for you. Your journey continues – simply sign in to pick up where you left off. Let\'s make every interaction effortless and secure.
+                        Enjoy a seamless experience tailored just for you. Your journey continues – simply sign in to pick up where you left off. Let's make every interaction effortless and secure.
                     "
             ></AuthContentComponent>
           </div>
-          <div className="auth-form form-pwd-change">
-            <div className="auth-section d-flex flex-wrap height-full flex-column justify-content-center position-relative">
+          <div >
+            <div className="auth-section d-flex height-full flex-column justify-content-center position-relative auth-form form-pwd-change">
               <div className="header position-absolute">
-                <div className="logo">
                   <a>
                     <img src="/src/assets/images/office-logo.png" />
                   </a>
                 </div>
-              </div>
               <div className="auth-form">
                 <div className="form-head">
                   <h1 className="heading">Forget Password?</h1>

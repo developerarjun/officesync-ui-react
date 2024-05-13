@@ -57,6 +57,9 @@
   color: #cccccc;
   text-decoration: none;
 }
+
+
+
 .toast-close-button {
   position: relative;
   right: -0.3em;
@@ -68,6 +71,23 @@
   text-shadow: 0 1px 0 #ffffff;
   /* opacity: 0.8; */
 }
+
+.close-icon-success {
+  color: $success;
+}
+
+.close-icon-warning {
+  color: $warning;
+}
+
+.close-icon-error {
+  color:$error;
+}
+
+.close-icon-info {
+  color:$info;
+}
+
 .toast-close-button:hover,
 .toast-close-button:focus {
   color: #000000;
