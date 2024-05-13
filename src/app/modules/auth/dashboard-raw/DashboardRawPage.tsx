@@ -1,9 +1,13 @@
+import '../dashboard-raw/dashboard-raw.css'
+import {useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import './dashboard-raw.css';
+
 function DashboardRawPage() {
+    const navigate=useNavigate();
     const [activeIndex, setActiveIndex] = useState(0);
 
-    const toggleAccordion = (index) => {
+    const toggleAccordion = (index: any) => {
         setActiveIndex(index === activeIndex ? null : index);
     };
 
@@ -40,7 +44,14 @@ function DashboardRawPage() {
                                         <li><a href="">Projects</a></li>
                                         <li className=""><a href="" className="active">Manage</a></li>
                                         <li><a href="">Employee</a></li>
-                                        <li><a href="">Setting</a></li>
+                                        <li> <a onClick={() => navigate('/dashboard-user')}>
+                                            Users
+                                            </a></li>
+                                        <li>  
+                                            <a onClick={() => navigate('/dashboard-user')}>
+                                                Settings
+                                            </a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
